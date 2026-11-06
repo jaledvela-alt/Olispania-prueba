@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mercados · Olispania</title>
+  <meta name="description" content="Olispania vende sus aceitunas en España y en mercados internacionales.">
+  <meta property="og:title" content="Olispania · Abre, comparte, repite.">
+  <meta property="og:description" content="Aceitunas, encurtidos y aliños: el aperitivo completo, hecho en Murcia.">
+  <meta property="og:image" content="img/cat/pdf-pg03.webp">
+  <meta property="og:locale" content="es_ES">
+  <meta name="theme-color" content="#2F3D14">
+  <link rel="alternate" hreflang="es" href="https://www.olispania.es/mercados.html">
+  <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/mercados.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/mercados.html">
+  <link rel="icon" href="img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css?v=68">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+  /* el camión avanza con el scroll (solo esta página) */
+  .mhero--scroll{padding:0;height:220vh;overflow:visible}
+  .mhero--scroll::before,.mhero--scroll::after{display:none}
+  .mhero__stage{position:sticky;top:0;height:100vh;min-height:560px;overflow:hidden;isolation:isolate;display:flex;align-items:center;background:#000 url(img/web/2026-11-05_Web_mercados-cabecera_v1.webp) center/cover}
+  .mhero__stage::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.84) 0%,rgba(0,0,0,.62) 55%,rgba(0,0,0,.40) 100%)}
+  .mhero__stage .mhero__in{width:100%}
+  html.js .mhero--scroll .mhero__lead{opacity:calc(var(--p-lead,0));translate:0 calc((1 - var(--p-lead,0)) * 18px)}
+  /* Frases del viaje: aparecen una a una mientras avanza el camión */
+  .mhero__beats{position:relative;height:1.2em;margin-top:34px;font:italic 400 min(72px,4.9vw)/1.1 var(--serif);letter-spacing:-.02em;color:var(--crema)}
+  .mhero__beat{position:absolute;left:0;top:0;margin:0;white-space:nowrap}
+  .mhero .mhero__beats p.mhero__beat{font-size:inherit;color:inherit;max-width:none}
+  @media (max-width:760px){.mhero__beats{font-size:4.4vw}}
+  html.js .mhero__beat{opacity:0}
+  
+  @media (prefers-reduced-motion:reduce){
+    .mhero--scroll{height:auto}
+    .mhero__stage{position:relative;height:auto;min-height:0;padding:120px 0 110px}
+    html.js .mhero--scroll .mhero__lead{opacity:1;translate:none}
+    .mhero__beats{height:auto;display:grid;gap:6px}
+    html.js .mhero__beat{position:static;opacity:1;translate:none}
+  }
+      .stats .stat__src{display:block;margin-top:14px;font-size:12px;opacity:.7}
+  .stats .stat__src b{font-weight:700}
+  </style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a href="index.html" class="top__logo" aria-label="Olispania, inicio">
+      <img src="img/Olispania_vertical_positivo.svg" alt="Olispania Aceitunas" width="52" height="85">
+    </a>
+    <button class="top__burger" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="top__nav" id="menu" aria-label="Principal">
+      <div class="top__grp top__grp--l">
+        <a href="index.html">Inicio</a>
+        <a href="salud.html">Salud</a>
+        <a href="calidad.html">Calidad</a>
+        <a href="productos.html">Productos</a>
+      </div>
+      <div class="top__grp top__grp--r">
+        <a href="mercados.html" aria-current="page">Mercados</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="contacto.html" class="top__cta">Contacto</a>
+        <a href="en/mercados.html" class="top__lang" hreflang="en" lang="en" aria-label="English">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- MERCADOS -->
+  <section id="mercados" class="mhero mhero--scroll">
+    <div class="mhero__stage">
+      <video class="mhero__video" muted playsinline preload="auto" poster="img/web/2026-11-05_Web_mercados-cabecera_v1.webp" aria-hidden="true" tabindex="-1" data-scrub="img/web/2026-11-05_Web_mercados-camion-scroll_v1.mp4"></video>
+      <div class="wrap mhero__in">
+        <p class="claim claim--lime">Mercados</p>
+        <h1>De Murcia a medio mundo.</h1>
+        <p class="mhero__lead">Nuestras aceitunas llegan a mesas de España y de fuera.<br>Nos adaptamos a cada país y seguimos abriendo mercados nuevos.</p>
+        <div class="mhero__beats">
+          <p class="mhero__beat" data-w="0.16 0.44">Cada tarro sale de Murcia.</p>
+          <p class="mhero__beat" data-w="0.44 0.72">Con lo mismo que ponemos en nuestra mesa.</p>
+          <p class="mhero__beat" data-w="0.72 1.01">Y seguimos abriendo camino.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec--stats">
+    <div class="wrap">
+      <ul class="stats">
+        <li><strong>+3.000.000</strong><span>kilos de aceitunas al año</span><small class="stat__src">Lo publicó Murcia Economía el 31 de agosto de <b>2024</b>.</small></li>
+        <li><strong>+57 %</strong><span>de crecimiento en 2024</span><small class="stat__src">Lo publicó Murcia Economía el 3 de mayo de <b>2025</b>.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- MOMENTO -->
+  <section class="moment">
+    <div class="wrap">
+      <p class="moment__big">Abre,<br>comparte,<br><em>repite.</em></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="legal">
+  <div class="wrap foot__in">
+    <div>
+      <img src="img/Olispania_horizontal_negativo.svg" alt="Olispania Aceitunas" width="180" height="72" class="foot__logo">
+      <p>Olispania Aceitunas, S.L.<br>CIF: B-73763666</p>
+      <p class="foot__contact"><a href="tel:+34968716794">T. 968 716 794</a><br><a href="mailto:olispania@olispania.es">olispania@olispania.es</a></p>
+    </div>
+    <div>
+      <h2 class="foot__h">Síguenos</h2>
+      <ul class="foot__list">
+        <li><a href="https://www.instagram.com/olispania/" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/olispania" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/olispania-aceitunas-sl/" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Legal</h2>
+      <ul class="foot__list">
+        <li><a href="aviso-legal.html">Aviso legal</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <p class="wrap foot__small">© 2026 Olispania Aceitunas, S.L.</p>
+</footer>
+
+<script>
+  // Menú móvil
+  const b=document.querySelector('.top__burger'), n=document.getElementById('menu');
+  b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
+  n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
+</script>
+<script>
+  /* el scroll mueve el vídeo fotograma a fotograma */
+  (function(){
+    var sec=document.querySelector('.mhero--scroll'); if(!sec) return;
+    var v=sec.querySelector('video[data-scrub]');
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var target=0, cur=0, dur=0, ready=false;
+    var beats=[].map.call(sec.querySelectorAll('.mhero__beat'),function(el){return {el:el,w:el.dataset.w.split(' ').map(parseFloat)}});
+    fetch(v.dataset.scrub).then(function(r){return r.blob()}).then(function(b){
+      v.src=URL.createObjectURL(b);
+      v.addEventListener('loadedmetadata',function(){dur=v.duration;ready=true},{once:true});
+    });
+    function prog(){
+      var r=sec.getBoundingClientRect(), span=sec.offsetHeight-innerHeight;
+      return Math.min(Math.max(-r.top/span,0),1);
+    }
+    function tick(){
+      var p=prog();
+      sec.style.setProperty('--p-lead',Math.min(Math.max((p-0.02)/0.12,0),1).toFixed(3));
+      beats.forEach(function(b){
+        var a=b.w[0], z=b.w[1], f=0.05, o;
+        if(p<a||p>z) o=0; else o=Math.min(1,(p-a)/f, z>1?1:(z-p)/f);
+        b.el.style.opacity=o.toFixed(3);
+        b.el.style.translate='0 '+((1-o)*(p<(a+z)/2?14:-14)).toFixed(1)+'px';
+      });
+      if(ready){
+        target=p*(dur-0.05);
+        cur+= (target-cur)*0.18;
+        if(Math.abs(target-cur)<0.004) cur=target;
+        if(Math.abs(v.currentTime-cur)>0.01 && !v.seeking) v.currentTime=cur;
+      }
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+</script>
+<script src="main.js?v=11" defer></script>
+</body>
+</html>

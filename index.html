@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Olispania · Abre, comparte, repite.</title>
+  <meta name="description" content="Aceitunas verdes y negras, rellenas, aliñadas y encurtidos. Elaboradas en la Región de Murcia desde 2012.">
+  <meta property="og:title" content="Olispania · Abre, comparte, repite.">
+  <meta property="og:description" content="Aceitunas, encurtidos y aliños: el aperitivo completo, hecho en Murcia.">
+  <meta property="og:image" content="img/cat/pdf-pg03.webp">
+  <meta property="og:locale" content="es_ES">
+  <meta name="theme-color" content="#2F3D14">
+  <link rel="alternate" hreflang="es" href="https://www.olispania.es/">
+  <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/">
+  <link rel="icon" href="img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="styles.css?v=68">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a href="index.html" class="top__logo" aria-label="Olispania, inicio">
+      <img src="img/Olispania_vertical_positivo.svg" alt="Olispania Aceitunas" width="52" height="85">
+    </a>
+    <button class="top__burger" aria-expanded="false" aria-controls="menu">Menú</button>
+    <nav class="top__nav" id="menu" aria-label="Principal">
+      <div class="top__grp top__grp--l">
+        <a href="index.html" aria-current="page">Inicio</a>
+        <a href="salud.html">Salud</a>
+        <a href="calidad.html">Calidad</a>
+        <a href="productos.html">Productos</a>
+      </div>
+      <div class="top__grp top__grp--r">
+        <a href="mercados.html">Mercados</a>
+        <a href="noticias.html">Noticias</a>
+        <a href="contacto.html" class="top__cta">Contacto</a>
+        <a href="en/index.html" class="top__lang" hreflang="en" lang="en" aria-label="English">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- INICIO -->
+  <section id="inicio" class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__text">
+        <p class="claim">Región de Murcia · desde 2012</p>
+        <h1>Abre,<br>comparte,<br><em>repite.</em></h1>
+        <p class="lead">Aceitunas, encurtidos y aliños:<br>el aperitivo completo, hecho en Murcia.</p>
+        <div class="hero__btns">
+          <a href="productos.html" class="btn btn--red">Descubre nuestras aceitunas</a>
+          <a href="catalogo/2026-11-05_Web_catalogo-2026_v1.pdf" class="btn btn--red" download="2026-11-05_Web_catalogo-2026_v1.pdf">Descarga catálogo completo</a>
+        </div>
+      </div>
+      <div class="hero__jars" aria-hidden="true">
+        <img src="img/tarro-mojo-picon.webp" alt="" class="jar jar--l" width="468" height="825">
+        <img src="img/tarro-chupadedos.webp" alt="" class="jar jar--c" width="468" height="825">
+        <img src="img/tarro-abuela.webp" alt="" class="jar jar--r" width="468" height="825">
+      </div>
+      <script>
+      /* Los 3 tarros de la cabecera cambian en cada carga (siempre tarros de 314 ml) */
+      (function(){var p=["314-aceituna-manzanilla-con-hueso-sabor-anchoa-200220.webp", "314-aceituna-manzanilla-deshuesada-sabor-anchoa-200220.webp", "314-aceituna-verde-partida-chupadedos.webp", "314-aceituna-verde-partida-mojo-picon-240300.webp", "314-aceituna-verde-partida-receta-de-la-abuela-240300.webp", "314-aceitunas-con-pepinillos.webp", "314-aceitunas-verdes-con-hueso--sabor-anchoa.webp", "314-ajos-alinados.webp", "314-banderillas-dulces.webp", "314-banderillas-picantes.webp", "314-cebollitas-agridulces.webp", "314-cebollitas-vinagre.webp?v=2", "314-cocktail-de-aceitunas-y-encurtidos.webp", "314-guindillas.webp", "314-pepinillos-pequenos-agridulces.webp", "314-pepinillos-pequenos-sabor-anchoa.webp", "314-picadillo-de-variantes.webp", "314-variantes.webp", "314-zanahorias-baby.webp"],j=document.querySelectorAll('.hero__jars .jar'),i,k,t;
+      for(i=p.length-1;i>0;i--){k=Math.floor(Math.random()*(i+1));t=p[i];p[i]=p[k];p[k]=t;}
+      for(i=0;i<j.length;i++){j[i].src='img/prod/'+p[i];}
+      /* entrada: cuando las 3 fotos están listas, los tarros saltan a su sitio */
+      var box=document.querySelector('.hero__jars'),done=false;function go(){if(!done){done=true;box.classList.add('is-in');}}
+      Promise.all([].map.call(j,function(im){return im.decode?im.decode().catch(function(){}):0;})).then(go);setTimeout(go,1500);})();
+      </script>
+    </div>
+  </section>
+
+  <!-- BIENVENIDOS -->
+  <section id="nosotros" class="welcome">
+    <div class="wrap welcome__in">
+      <div class="welcome__text">
+        <p class="claim claim--leaf">Bienvenido</p>
+        <h2>Dos familias,<br><em>una misma mesa.</em></h2>
+        <p>Olispania Aceitunas, S.L. Empresa creada en 2012 tras la unión de dos familias con más de 30 años de experiencia en el sector, cuyo principal objetivo ha sido desarrollar un producto de máxima calidad.</p>
+        <p>Nuestra filosofía está también orientada a la excelencia en cuanto a la seguridad alimentaria y a la satisfacción del cliente, por ello mantenemos desde 2017 la certificación IFS con un nivel superior (96,35 sobre 100).</p>
+        <p>Nos interesa destacar nuestra amplia gama de rellenos entre los que se encuentran el de anchoa, pimiento, limón, salmón, gamba, chorizo, jamón y ajo.</p>
+        <p>Disponemos también de un surtido de aliños y sabores elaborados con las variedades Manzanilla, Verdial, Gordal, Cacereña y Cuquillo. Esto junto con nuestros encurtidos, completan el catálogo de este año 2026.</p>
+        <p>Trabajamos con el canal food service y con la gran distribución a nivel nacional e internacional, tanto con nuestras marcas (Olispania y Vitaloliva) como con la marca del distribuidor, en vidrio y en lata.</p>
+      </div>
+      <figure class="welcome__img">
+        <img src="img/web/fabrica.webp" alt="Vista aérea de la fábrica de Olispania en Jumilla" loading="lazy" width="615" height="348">
+      </figure>
+    </div>
+  </section>
+
+  <!-- SELLO IFS -->
+  <section id="calidad" class="ifs">
+    <div class="wrap ifs__in">
+      <figure class="ifs__seal"><img src="img/web/ifs-food.png" alt="IFS Food" width="112" height="64"></figure>
+      <p>La norma internacional de mayor renombre que se centra en la gestión de un sistema efectivo para administrar y mejorar constantemente la calidad de sus productos.</p>
+    </div>
+  </section>
+
+  <!-- RENOVABLES -->
+  <section class="eco" id="renovables">
+    <div class="wrap">
+      <header class="eco__head">
+        <div>
+          <p class="claim claim--lime">Proyecto cofinanciado</p>
+          <h2>Fomento del uso de energías renovables por las empresas, en particular las PYME.</h2>
+        </div>
+        <p><strong>Objetivos de la actuación:</strong> fomento del uso de energías renovables por las empresas, en particular las PYME.</p>
+      </header>
+
+      <h3 class="eco__h">Resultados de la actuación</h3>
+      <ul class="eco__stats">
+        <li><strong>10,58<small> tep/año</small></strong><span>Ahorro energético anual</span></li>
+        <li><strong>95,85<small> kW</small></strong><span>Capacidad de producción de energía</span></li>
+        <li><strong>42,87<small> tCO<sub>2</sub>/año</small></strong><span>Ahorro anual de emisiones de gases de efecto invernadero (toneladas equivalentes de CO<sub>2</sub> al año)</span></li>
+      </ul>
+
+      <div class="eco__money">
+        <div class="eco__state">
+          <h3 class="eco__h">Estado de la tramitación</h3>
+          <p class="eco__badge">Concedida</p>
+          <div class="eco__logos">
+            <img src="img/web/logo-region-de-murcia.jpg" alt="Región de Murcia" loading="lazy" width="300" height="126">
+            <img src="img/web/logo-union-europea.jpg" alt="Unión Europea, Fondo Europeo de Desarrollo Regional" loading="lazy" width="250" height="170">
+          </div>
+        </div>
+        <ul class="eco__bars">
+          <li style="--w:100%"><div class="eco__row"><span>Inversión total realizada</span><strong>70.149,00 €</strong></div><i></i></li>
+          <li style="--w:44.4%"><div class="eco__row"><span>Apoyo financiero de la Unión (subvención obtenida)</span><strong>31.117,04 €</strong></div><i></i></li>
+          <li style="--w:35.5%"><div class="eco__row"><span>Financiación procedente del FEDER</span><strong>24.893,63 €</strong></div><i></i></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELLO PERTE -->
+  <section class="perte" aria-label="Financiación PERTE">
+    <div class="wrap">
+      <article class="perte__card">
+        <img class="perte__logos" src="img/web/perte-logos.webp" alt="Financiado por la Unión Europea, NextGenerationEU. Plan de Recuperación, Transformación y Resiliencia. Gobierno de España, Ministerio de Industria y Turismo." width="757" height="85">
+        <dl class="perte__dl">
+          <div><dt>Razón social del beneficiario</dt><dd>OLISPANIA ACEITUNAS SOCIEDAD LIMITADA</dd></div>
+          <div><dt>Nº de expediente proyecto</dt><dd class="perte__id">PA2-010300-2024-46</dd></div>
+        </dl>
+        <p class="perte__perte">PERTE en el sector agroalimentario</p>
+        <dl class="perte__dl perte__dl--one">
+          <div><dt>Título del proyecto</dt><dd>AMPLIACIÓN DE CAPACIDAD PRODUCTIVA EN INSTALACIONES EXISTENTES</dd></div>
+        </dl>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="legal">
+  <div class="wrap foot__in">
+    <div>
+      <img src="img/Olispania_horizontal_negativo.svg" alt="Olispania Aceitunas" width="180" height="72" class="foot__logo">
+      <p>Olispania Aceitunas, S.L.<br>CIF: B-73763666</p>
+      <p class="foot__contact"><a href="tel:+34968716794">T. 968 716 794</a><br><a href="mailto:olispania@olispania.es">olispania@olispania.es</a></p>
+    </div>
+    <div>
+      <h2 class="foot__h">Síguenos</h2>
+      <ul class="foot__list">
+        <li><a href="https://www.instagram.com/olispania/" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/olispania" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/olispania-aceitunas-sl/" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Legal</h2>
+      <ul class="foot__list">
+        <li><a href="aviso-legal.html">Aviso legal</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="wrap foot__small">© 2026 Olispania Aceitunas, S.L.</p>
+</footer>
+
+<script>
+  // Menú móvil
+  const b=document.querySelector('.top__burger'), n=document.getElementById('menu');
+  b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
+  n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
+</script>
+<script src="main.js?v=11" defer></script>
+</body>
+</html>

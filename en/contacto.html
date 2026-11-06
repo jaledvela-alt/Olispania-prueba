@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Olispania</title>
+  <meta name="description" content="Office in Murcia and factory in Jumilla. Phone +34 968 716 794, olispania@olispania.es.">
+  <meta property="og:title" content="Olispania · Open, share, repeat.">
+  <meta property="og:description" content="Olives, pickles and dressings: the complete aperitivo, made in Murcia.">
+  <meta property="og:image" content="../img/cat/pdf-pg03.webp">
+  <meta property="og:locale" content="en_GB">
+  <meta name="theme-color" content="#2F3D14">
+  <link rel="alternate" hreflang="es" href="https://www.olispania.es/contacto.html">
+  <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/contacto.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/contacto.html">
+  <link rel="icon" href="../img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="../styles.css?v=68">
+<script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a href="index.html" class="top__logo" aria-label="Olispania, home">
+      <img src="../img/Olispania_vertical_positivo.svg" alt="Olispania Aceitunas" width="52" height="85">
+    </a>
+    <button class="top__burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="top__nav" id="menu" aria-label="Main">
+      <div class="top__grp top__grp--l">
+        <a href="index.html">Home</a>
+        <a href="salud.html">Health</a>
+        <a href="calidad.html">Quality</a>
+        <a href="productos.html">Products</a>
+      </div>
+      <div class="top__grp top__grp--r">
+        <a href="mercados.html">Markets</a>
+        <a href="noticias.html">News</a>
+        <a href="contacto.html" class="top__cta" aria-current="page">Contact</a>
+        <a href="../contacto.html" class="top__lang" hreflang="es" lang="es" aria-label="Español">ES</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact contact--bg">
+    <div class="wrap contact__in">
+      <div>
+        <p class="claim claim--lime">Contact</p>
+        <h1>Let's talk.</h1>
+        <dl class="addr">
+          <dt>Office</dt>
+          <dd>Avenida de la Justicia, 8. Edificio Torre Sur, 4.º F<br>30011 Murcia, Spain</dd>
+          <dt>Factory</dt>
+          <dd>Los Romerales Industrial Estate, plots 89-92<br>PO Box 342 · 30520 Jumilla (Murcia), Spain</dd>
+          <dt>Phone</dt>
+          <dd><a href="tel:+34968716794">+34 968 716 794</a> · Fax +34 968 757 928</dd>
+          <dt>Email</dt>
+          <dd><a href="mailto:olispania@olispania.es">olispania@olispania.es</a></dd>
+        </dl>
+        <p class="contact__lema">Open,<br>share,<br><em>repeat.</em></p>
+      </div>
+      <form class="form" id="form">
+        <h3>Send us a message</h3>
+        <label>Name<input name="nombre" required autocomplete="name"></label>
+        <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Subject<input name="asunto"></label>
+        <label>Message<textarea name="mensaje" rows="5" required></textarea></label>
+        <label class="check"><input type="checkbox" required> <span>I accept the <a href="../privacidad.html" target="_blank" rel="noopener">privacy policy</a>.</span></label>
+        <button class="btn btn--red" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="legal">
+  <div class="wrap foot__in">
+    <div>
+      <img src="../img/Olispania_horizontal_negativo.svg" alt="Olispania Aceitunas" width="180" height="72" class="foot__logo">
+      <p>Olispania Aceitunas, S.L.<br>CIF: B-73763666</p>
+      <p class="foot__contact"><a href="tel:+34968716794">T. +34 968 716 794</a><br><a href="mailto:olispania@olispania.es">olispania@olispania.es</a></p>
+    </div>
+    <div>
+      <h2 class="foot__h">Follow us</h2>
+      <ul class="foot__list">
+        <li><a href="https://www.instagram.com/olispania/" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/olispania" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/olispania-aceitunas-sl/" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Legal</h2>
+      <ul class="foot__list">
+        <li><a href="../aviso-legal.html">Legal notice</a></li>
+        <li><a href="../privacidad.html">Privacy</a></li>
+        <li><a href="../cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <p class="wrap foot__small">© 2026 Olispania Aceitunas, S.L.</p>
+</footer>
+
+<script>
+  // Menú móvil
+  const b=document.querySelector('.top__burger'), n=document.getElementById('menu');
+  b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
+  n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
+  // Formulario: de momento abre el correo (falta conectar un servicio de envío)
+  document.getElementById('form').addEventListener('submit',e=>{
+    e.preventDefault(); const f=new FormData(e.target);
+    const body=`${f.get('mensaje')}\n\n${f.get('nombre')} · ${f.get('email')}`;
+    location.href=`mailto:olispania@olispania.es?subject=${encodeURIComponent(f.get('asunto')||'Web contact')}&body=${encodeURIComponent(body)}`;
+  });
+</script>
+<script src="../main.js?v=11" defer></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quality · Olispania</title>
+  <meta name="description" content="IFS Food higher level (96.35/100) since 2017. Selection, tastings, R&amp;D and traceability.">
+  <meta property="og:title" content="Olispania · Open, share, repeat.">
+  <meta property="og:description" content="Olives, pickles and dressings: the complete aperitivo, made in Murcia.">
+  <meta property="og:image" content="../img/cat/pdf-pg03.webp">
+  <meta property="og:locale" content="en_GB">
+  <meta name="theme-color" content="#2F3D14">
+  <link rel="alternate" hreflang="es" href="https://www.olispania.es/calidad.html">
+  <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/calidad.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/calidad.html">
+  <link rel="icon" href="../img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
+  <link rel="preload" href="../fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../fonts.css">
+  <link rel="stylesheet" href="../styles.css?v=68">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+  /* Calidad en vertical: sello a pantalla completa y cuatro bloques apilados que se descubren al bajar */
+  .seal--tall{min-height:0;display:flex;align-items:center;padding:48px 0 56px}
+  .seal--tall .seal__in{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;row-gap:18px}
+  .seal--tall .seal__num{justify-self:center;text-align:center;font-size:clamp(100px,13vw,190px);line-height:.9}
+  .seal--tall p:not(.seal__num){margin-inline:auto;font-size:clamp(18px,1.6vw,22px)}
+  .seal--tall h1{font-size:clamp(40px,5.4vw,76px)}
+  .pillars--stack{grid-template-columns:1fr;gap:40px;padding-top:0}
+  .pillars--stack li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;grid-row:auto;column-gap:clamp(40px,6vw,96px);min-height:0;align-items:center}
+  .pillars--stack .pillars__img{grid-column:1;grid-row:1/-1;margin:0;aspect-ratio:16/9;border-radius:22px}
+  .pillars--stack h3{grid-column:2;grid-row:2;font-size:clamp(32px,3.6vw,52px);line-height:1.02;margin:0 0 14px}
+  .pillars--stack p{grid-column:2;grid-row:3;font-size:clamp(18px,1.6vw,22px);max-width:30ch;margin:0}
+  .pillars--stack li:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .pillars--stack li:nth-child(even) .pillars__img{grid-column:2}
+  .pillars--stack li:nth-child(even) h3,.pillars--stack li:nth-child(even) p{grid-column:1}
+  .pillars--stack .pillars__img img{scale:1.14;translate:0 calc(var(--py,0) * 1px);will-change:translate}
+  html.js .pillars--stack li.rv .pillars__img{clip-path:inset(14% 6% 14% 6% round 22px);transition:clip-path 1.1s cubic-bezier(.2,.7,.2,1)}
+  html.js .pillars--stack li.rv.in .pillars__img{clip-path:inset(0 0 0 0 round 22px)}
+  @media (max-width:760px){
+    .pillars--stack li,.pillars--stack li:nth-child(even){grid-template-columns:1fr;grid-template-rows:auto;min-height:0}
+    .pillars--stack .pillars__img,.pillars--stack li:nth-child(even) .pillars__img{grid-column:1;grid-row:auto;margin-bottom:22px}
+    .pillars--stack h3,.pillars--stack p,.pillars--stack li:nth-child(even) h3,.pillars--stack li:nth-child(even) p{grid-column:1;grid-row:auto}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .pillars--stack .pillars__img img{scale:1;translate:none}
+    html.js .pillars--stack li.rv .pillars__img{clip-path:none}
+  }
+  </style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a href="index.html" class="top__logo" aria-label="Olispania, home">
+      <img src="../img/Olispania_vertical_positivo.svg" alt="Olispania Aceitunas" width="52" height="85">
+    </a>
+    <button class="top__burger" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav class="top__nav" id="menu" aria-label="Main">
+      <div class="top__grp top__grp--l">
+        <a href="index.html">Home</a>
+        <a href="salud.html">Health</a>
+        <a href="calidad.html" aria-current="page">Quality</a>
+        <a href="productos.html">Products</a>
+      </div>
+      <div class="top__grp top__grp--r">
+        <a href="mercados.html">Markets</a>
+        <a href="noticias.html">News</a>
+        <a href="contacto.html" class="top__cta">Contact</a>
+        <a href="../calidad.html" class="top__lang" hreflang="es" lang="es" aria-label="Español">ES</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- CALIDAD -->
+  <section id="calidad" class="seal seal--tall">
+    <div class="wrap seal__in">
+      <p class="seal__num">96.35<small>/100</small></p>
+      <div>
+        <p class="claim">Quality</p>
+        <h1>IFS Food, higher level.</h1>
+        <p>Certified since 2017 to the most recognised international food safety standard.</p>
+      </div>
+    </div>
+  </section>
+  <section class="sec sec--tight-top" style="padding:40px 0 64px">
+    <div class="wrap">
+      <ul class="pillars pillars--stack">
+        <li>
+          <figure class="pillars__img"><img src="../img/web/2026-11-05_Web_calidad-elegimos-bien_v1.webp" alt="Hands picking green olives from a freshly harvested crate" loading="lazy" width="1200" height="896"></figure>
+          <h3>We choose well</h3>
+          <p>We select every olive with care and season it with a lifetime of know-how.</p>
+        </li>
+        <li>
+          <figure class="pillars__img"><img src="../img/web/2026-11-05_Web_calidad-probamos-siempre_v1.webp" alt="Tasting table with bowls of green and black olives and a notebook" loading="lazy" width="1200" height="896"></figure>
+          <h3>We always taste</h3>
+          <p>We hold regular tastings so every jar tastes just like the last one.</p>
+        </li>
+        <li>
+          <figure class="pillars__img"><img src="../img/web/2026-11-05_Web_calidad-seguimos-innovando_v1.webp" alt="Test table with red pepper, lemon, anchovy and salmon fillings" loading="lazy" width="1200" height="896"></figure>
+          <h3>We keep innovating</h3>
+          <p>Our R&amp;D team works on new recipes and flavours.</p>
+        </li>
+        <li>
+          <figure class="pillars__img"><img src="../img/web/2026-11-05_Web_calidad-sabemos-de-donde-viene_v1.webp" alt="Andalusian olive grove at sunset with crates of olives" loading="lazy" width="1200" height="896"></figure>
+          <h3>We know where it comes from</h3>
+          <p>A traceability system follows every product along the whole chain.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot" id="legal">
+  <div class="wrap foot__in">
+    <div>
+      <img src="../img/Olispania_horizontal_negativo.svg" alt="Olispania Aceitunas" width="180" height="72" class="foot__logo">
+      <p>Olispania Aceitunas, S.L.<br>CIF: B-73763666</p>
+      <p class="foot__contact"><a href="tel:+34968716794">T. +34 968 716 794</a><br><a href="mailto:olispania@olispania.es">olispania@olispania.es</a></p>
+    </div>
+    <div>
+      <h2 class="foot__h">Follow us</h2>
+      <ul class="foot__list">
+        <li><a href="https://www.instagram.com/olispania/" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.facebook.com/olispania" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.linkedin.com/company/olispania-aceitunas-sl/" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="foot__h">Legal</h2>
+      <ul class="foot__list">
+        <li><a href="../aviso-legal.html">Legal notice</a></li>
+        <li><a href="../privacidad.html">Privacy</a></li>
+        <li><a href="../cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <p class="wrap foot__small">© 2026 Olispania Aceitunas, S.L.</p>
+</footer>
+
+<script>
+  // Menú móvil
+  const b=document.querySelector('.top__burger'), n=document.getElementById('menu');
+  b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
+  n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
+</script>
+<script>
+  /* Calidad: las fotos se desplazan un poco más despacio que la página (parallax suave) */
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var figs=[].slice.call(document.querySelectorAll('.pillars--stack .pillars__img')), t=false;
+    function run(){
+      var vh=innerHeight;
+      figs.forEach(function(f){
+        var r=f.getBoundingClientRect(); if(r.bottom<-50||r.top>vh+50) return;
+        var c=(r.top+r.height/2-vh/2)/vh;
+        f.style.setProperty('--py',(c*-0.07*r.height).toFixed(1));
+      });
+      t=false;
+    }
+    addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(run)}},{passive:true});
+    addEventListener('resize',run); run();
+  })();
+</script>
+<script src="../main.js?v=11" defer></script>
+</body>
+</html>
