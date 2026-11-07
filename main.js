@@ -90,6 +90,53 @@
   up.className = 'totop'; up.type = 'button'; up.setAttribute('aria-label', EN ? 'Back to top' : 'Volver arriba'); up.innerHTML = '<span aria-hidden="true"></span>';
   up.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
   document.body.appendChild(up);
+  /* Pastilla negra: cae como una gota al entrar y se encoge al hacer scroll (el logo en negativo va dentro) */
+  (function () {
+    var a = top && top.querySelector('.top__logo'), im = a && a.querySelector('img');
+    if (!a || !im) return;
+    var pill = document.createElement('span'); pill.className = 'logo-pill'; pill.setAttribute('aria-hidden', 'true');
+    var pi = document.createElement('img'); pi.src = im.getAttribute('src').replace('Olispania_vertical_positivo.svg', 'Olispania_vertical_negativo.svg'); pi.alt = ''; pi.width = 52; pi.height = 85;
+    pill.appendChild(pi); a.appendChild(pill);
+    var ball = document.createElement('span'); ball.className = 'logo-ball'; ball.setAttribute('aria-hidden', 'true'); a.appendChild(ball);
+    var on = function () { top.classList.remove('logo-drop'); top.classList.add('pill-on'); };
+    var isHome = /(^|\/)(index\.html)?$/.test(location.pathname);
+    if (!isHome || reduce || (window.scrollY || 0) > 24) { on(); return; }
+    pi.addEventListener('animationend', function () { on(); });
+    setTimeout(function () {
+      top.classList.add('logo-drop');
+      /* la gota se calcula fotograma a fotograma (WAAPI): cuelga de un cuello fino, cae, se ensancha y el cuello se abre al final */
+      var sm = function (t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
+      var eo = function (t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); };
+      var eio = function (t) { t = Math.max(0, Math.min(1, t)); return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+      var f1 = function (v) { return (Math.round(v * 10) / 10) + '%'; };
+      var shape = function (t) {
+        var u = Math.min(t / .5, 1);
+        var F = .025 + .975 * Math.pow(u, 2.1);                      /* frente de la gota: cae acelerando */
+        var wb = .16 + .84 * eo(Math.min(t / .52, 1));                /* ancho del bulbo */
+        var o = eio((t - .5) / .42);                                  /* apertura del cuello al final */
+        var wn = (.05 - .02 * Math.min(u, 1)) * (1 - o) + o;          /* ancho del cuello */
+        var hb = Math.min(.12 + .5 * wb, F);                          /* alto del bulbo */
+        var ry = Math.min(.28, hb * .6);                              /* redondeo inferior */
+        var ys = [], i, n = 18, m = 14;
+        for (i = 0; i < n; i++) ys.push((F - ry) * i / n);
+        for (i = 0; i <= m; i++) ys.push(F - ry + ry * Math.sin(Math.PI / 2 * i / m));
+        var L = [], R = [];
+        ys.forEach(function (y) {
+          var w = wn + (wb - wn) * sm((y - (F - hb)) / (hb * .75));
+          if (y > F - ry) { var q = (y - (F - ry)) / ry; w *= Math.sqrt(Math.max(0, 1 - q * q)); }
+          L.push(50 - w * 50); R.push(50 + w * 50);
+        });
+        var pts = [], k;
+        for (k = 0; k < ys.length; k++) pts.push(f1(L[k]) + ' ' + f1(ys[k] * 100));
+        for (k = ys.length - 1; k >= 0; k--) pts.push(f1(R[k]) + ' ' + f1(ys[k] * 100));
+        return 'polygon(' + pts.join(',') + ')';
+      };
+      var kf = [], N = 120, j;
+      for (j = 0; j <= N; j++) kf.push({ clipPath: shape(j / N) });
+      if (pill.animate) pill.animate(kf, { duration: 2400, easing: 'linear', fill: 'forwards' });
+    }, 250);
+    setTimeout(on, 4600); /* seguro por si la animación no llega a terminar */
+  })();
   var ticking = false;
   function onScroll() {
     var y = window.scrollY || 0, h = document.documentElement.scrollHeight - window.innerHeight;

@@ -1103,3 +1103,133 @@ footer.foot .wrap{max-width:calc(1180px + 2*clamp(20px,3vw,56px));width:100%;mar
 
 /* Portada: contenido 15 % más arriba, pegado al menú (72 -> 30 px de relleno superior) */
 @media (min-width:981px){.hero{padding-top:30px}}
+
+/* ===== Menú: etiqueta negra como la de los tarros, colgada del borde superior de la web (logo vertical en negativo).
+   Brota como una gota que se estira hacia abajo al entrar y se encoge al hacer scroll ===== */
+.top{--pill-h:221px;--pill-w:139px;--pill-logo:161px;--pill-s:.416}
+html.js .top__logo>img{visibility:hidden}
+.logo-pill{position:absolute;top:0;left:50%;margin-left:calc(var(--pill-w) / -2);width:var(--pill-w);height:var(--pill-h);display:flex;align-items:center;justify-content:center;border-radius:0 0 50% 50% / 0 0 28% 28%;background:var(--negro);box-shadow:0 14px 34px rgba(35,31,30,.30);transform-origin:50% 0;scale:1;opacity:0;pointer-events:none;transition:scale .7s var(--spring)}
+header.top .top__logo .logo-pill img{flex:none;height:var(--pill-logo);width:auto;display:block;margin-top:-2%}
+.top.pill-on .logo-pill,.top.logo-drop .logo-pill{opacity:1;pointer-events:auto}
+.top.is-scrolled .logo-pill{scale:var(--pill-s)}
+.top.is-scrolled .top__in{height:92px}
+.top .logo-pill{display:flex}
+@media (min-width:981px){.top__logo{width:220px;height:100px}}
+@media (max-width:980px){
+  .top{--pill-h:144px;--pill-w:94px;--pill-logo:108px;--pill-s:.486}
+  .top__logo{min-width:94px;height:60px}
+  .logo-pill{left:24px;margin-left:0;transform-origin:0 0}
+}
+/* la gota de aceite: se forma arriba, se alarga despacio por su propio peso, se pasa un pelo y se ensancha hasta ser la etiqueta */
+/* La gota no se desprende: nace del borde superior, cuelga de un hilo que se estira al caer y se ensancha hasta ser la etiqueta */
+.logo-ball{position:absolute;top:0;left:50%;width:30px;height:30px;margin-left:-15px;background:var(--negro);border-radius:50%;opacity:0;pointer-events:none;will-change:translate,scale,opacity}
+.top.logo-drop .logo-ball{animation:none}
+.top.logo-drop .logo-pill{box-shadow:none;clip-path:polygon(50% 0,50% 0,50% 0);will-change:clip-path}
+.logo-pill{transition:scale .7s var(--spring),box-shadow .6s ease}
+.top.logo-drop .logo-pill img{animation:gota-logo2 .8s 2s both}
+/* cae y se ensancha a la vez: al llegar abajo ya casi tiene el ancho y la forma completos */
+@keyframes gota-y{
+  0%{scale:1 .02;animation-timing-function:cubic-bezier(.5,0,.9,.55)}
+  50%{scale:1 1;animation-timing-function:ease-out}
+  62%{scale:1 1.04;animation-timing-function:ease-in-out}
+  80%{scale:1 .99;animation-timing-function:ease-out}
+  100%{scale:1 1}
+}
+@keyframes gota-x{
+  0%{transform:scaleX(.12);animation-timing-function:cubic-bezier(.2,.7,.3,1)}
+  22%{transform:scaleX(.88);animation-timing-function:cubic-bezier(.3,.6,.4,1)}
+  48%{transform:scaleX(1);animation-timing-function:ease-out}
+  100%{transform:scaleX(1)}
+}
+@keyframes gota-cuello{
+  0%,46%{clip-path:polygon(46% 0%,46% 3%,45.9% 6%,45.3% 9%,44.2% 12%,42.8% 15%,41% 18%,38.8% 21%,36.4% 24%,33.8% 27%,31% 30%,28% 33%,25% 36%,22% 39%,19% 42%,16% 45%,13.1% 48%,10.5% 51%,8% 54%,5.7% 57%,3.8% 60%,2.2% 63%,1% 66%,0.3% 69%,0% 72%,0.3% 75%,1% 77.5%,2.1% 80%,3.6% 82.5%,5.7% 85%,8.4% 87.5%,11.7% 90%,15.9% 92.5%,21.5% 95%,29.3% 97.5%,50% 100%,50% 100%,70.7% 97.5%,78.5% 95%,84.1% 92.5%,88.3% 90%,91.6% 87.5%,94.3% 85%,96.4% 82.5%,97.9% 80%,99% 77.5%,99.7% 75%,100% 72%,99.7% 69%,99% 66%,97.8% 63%,96.2% 60%,94.3% 57%,92% 54%,89.5% 51%,86.9% 48%,84% 45%,81% 42%,78% 39%,75% 36%,72% 33%,69% 30%,66.2% 27%,63.6% 24%,61.2% 21%,59% 18%,57.2% 15%,55.8% 12%,54.7% 9%,54.1% 6%,54% 3%,54% 0%);animation-timing-function:cubic-bezier(.4,0,.2,1)}
+  92%,100%{clip-path:polygon(0% 0%,0% 3%,0% 6%,0% 9%,0% 12%,0% 15%,0% 18%,0% 21%,0% 24%,0% 27%,0% 30%,0% 33%,0% 36%,0% 39%,0% 42%,0% 45%,0% 48%,0% 51%,0% 54%,0% 57%,0% 60%,0% 63%,0% 66%,0% 69%,0% 72%,0.3% 75%,1% 77.5%,2.1% 80%,3.6% 82.5%,5.7% 85%,8.4% 87.5%,11.7% 90%,15.9% 92.5%,21.5% 95%,29.3% 97.5%,50% 100%,50% 100%,70.7% 97.5%,78.5% 95%,84.1% 92.5%,88.3% 90%,91.6% 87.5%,94.3% 85%,96.4% 82.5%,97.9% 80%,99% 77.5%,99.7% 75%,100% 72%,100% 69%,100% 66%,100% 63%,100% 60%,100% 57%,100% 54%,100% 51%,100% 48%,100% 45%,100% 42%,100% 39%,100% 36%,100% 33%,100% 30%,100% 27%,100% 24%,100% 21%,100% 18%,100% 15%,100% 12%,100% 9%,100% 6%,100% 3%,100% 0%)}
+}
+@keyframes gota-ball{
+  0%{translate:0 calc(var(--pill-h)*.02 - 28px);scale:.5 .5;animation-timing-function:cubic-bezier(.5,0,.9,.55)}
+  50%{translate:0 calc(var(--pill-h) - 36px);scale:1.4 1.1}
+  100%{translate:0 calc(var(--pill-h) - 36px);scale:1.4 1.1}
+}
+@keyframes gota-ball-fade{0%,16%{opacity:1}30%,100%{opacity:0}}
+@keyframes gota-logo2{0%{opacity:0;filter:blur(8px);scale:.92}100%{opacity:1;filter:blur(0);scale:1}}
+@media (prefers-reduced-motion:reduce){.top.logo-drop .logo-pill,.top.logo-drop .logo-pill img,.top.logo-drop .logo-ball{animation:none}.logo-pill{transition-duration:.01ms}}
+
+/* ===== Botones de cristal (estilo iOS "liquid glass"): translúcidos, con borde de luz, reflejo arriba y sombra suave ===== */
+.btn,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle,.totop{
+  -webkit-backdrop-filter:blur(14px) saturate(1.8);backdrop-filter:blur(14px) saturate(1.8);
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85),inset 0 -1.5px 1px rgba(255,255,255,.22),inset 0 0 14px rgba(255,255,255,.14),0 1px 2px rgba(35,31,30,.10),0 10px 24px -6px rgba(35,31,30,.22);
+  text-shadow:none
+}
+/* rojo: cristal tintado de pimiento */
+.btn--red{
+  background:radial-gradient(120% 90% at 50% -25%,rgba(255,255,255,.55),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.16),rgba(255,255,255,0) 50%,rgba(35,31,30,.12)),rgba(200,55,45,.9);
+  color:#fff;
+  box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),inset 0 -2px 3px rgba(120,20,15,.35),inset 0 0 16px rgba(255,255,255,.12),0 1px 2px rgba(120,20,15,.25),0 12px 26px -8px rgba(200,55,45,.55)
+}
+/* contorno / secundarios: cristal claro */
+.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{
+  background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.75),rgba(255,255,255,0) 60%),linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.08)),rgba(255,255,255,.18);
+  color:var(--oliva)
+}
+.top__nav a.top__cta,.top__nav a.top__lang{border-color:rgba(255,255,255,.7)}
+/* volver arriba: cristal oscuro */
+.totop{
+  background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.4),rgba(255,255,255,0) 60%),rgba(47,61,20,.82);
+  color:var(--crema);border-color:rgba(255,255,255,.35)
+}
+@media (hover:hover) and (pointer:fine){
+  .btn--red:hover{background:radial-gradient(120% 90% at 50% -25%,rgba(255,255,255,.65),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,0) 50%,rgba(35,31,30,.1)),rgba(210,62,52,.92)}
+  .btn--line:hover,.top__nav a.top__cta:hover,.top__nav a.top__lang:hover,.top__burger:hover,.shop__toggle:hover{
+    background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.9),rgba(255,255,255,0) 60%),linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,.16)),rgba(255,255,255,.3);color:var(--oliva)!important;border-color:rgba(255,255,255,.85)
+  }
+  .totop:hover{background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.5),rgba(255,255,255,0) 60%),rgba(69,111,20,.9)}
+}
+.btn:active,.top__nav a.top__cta:active,.top__burger:active{box-shadow:inset 0 2px 6px rgba(35,31,30,.18),0 4px 10px -4px rgba(35,31,30,.2)}
+/* sin desenfoque disponible: fondo algo más opaco para que siga leyéndose */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{background-color:rgba(245,239,224,.9)}
+}
+@media (prefers-reduced-transparency:reduce){
+  .btn,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle,.totop{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .btn--red{background:var(--pimiento)}.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{background:var(--crema)}.totop{background:var(--oliva)}
+}
+
+/* Botones de cristal SIN transparencia: mismo brillo, pero con fondo sólido */
+.btn,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle,.totop{-webkit-backdrop-filter:none;backdrop-filter:none}
+.btn--red{background:radial-gradient(120% 90% at 50% -25%,rgba(255,255,255,.5),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0) 50%,rgba(35,31,30,.12)),var(--pimiento)}
+.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{background:radial-gradient(120% 90% at 50% -30%,#fff,rgba(255,255,255,0) 62%),linear-gradient(180deg,#FFFDF7,#F3ECD9)}
+.totop{background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.35),rgba(255,255,255,0) 60%),var(--oliva)}
+@media (hover:hover) and (pointer:fine){
+  .btn--red:hover{background:radial-gradient(120% 90% at 50% -25%,rgba(255,255,255,.6),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,0) 50%,rgba(35,31,30,.1)),color-mix(in srgb,var(--pimiento) 92%,#fff)}
+  .btn--line:hover,.top__nav a.top__cta:hover,.top__nav a.top__lang:hover,.top__burger:hover,.shop__toggle:hover{background:radial-gradient(120% 90% at 50% -30%,#fff,rgba(255,255,255,0) 62%),linear-gradient(180deg,#FFFFFF,#F8F2E2)}
+  .totop:hover{background:radial-gradient(120% 90% at 50% -30%,rgba(255,255,255,.45),rgba(255,255,255,0) 60%),var(--hoja)}
+}
+
+/* Botones sin sombra exterior: se conservan solo los brillos interiores */
+.btn,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle,.totop{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.85),inset 0 -1.5px 1px rgba(255,255,255,.22),inset 0 0 14px rgba(255,255,255,.14)}
+.btn--red{box-shadow:inset 0 1.5px 0 rgba(255,255,255,.7),inset 0 -2px 3px rgba(120,20,15,.35),inset 0 0 16px rgba(255,255,255,.12)}
+.btn:active,.top__nav a.top__cta:active,.top__burger:active{box-shadow:inset 0 2px 6px rgba(35,31,30,.18)}
+
+/* Botones sin reflejo superior: sin brillo radial ni línea de luz arriba */
+.btn--red{background:var(--pimiento);box-shadow:inset 0 -2px 3px rgba(120,20,15,.3)}
+.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{background:linear-gradient(180deg,#FFFDF7,#F3ECD9);box-shadow:inset 0 -1.5px 1px rgba(255,255,255,.22)}
+.totop{background:var(--oliva);box-shadow:none}
+@media (hover:hover) and (pointer:fine){
+  .btn--red:hover{background:color-mix(in srgb,var(--pimiento) 92%,#fff)}
+  .btn--line:hover,.top__nav a.top__cta:hover,.top__nav a.top__lang:hover,.top__burger:hover,.shop__toggle:hover{background:linear-gradient(180deg,#FFFFFF,#F8F2E2)}
+  .totop:hover{background:var(--hoja)}
+}
+.btn:active,.top__nav a.top__cta:active,.top__burger:active{box-shadow:inset 0 2px 6px rgba(35,31,30,.18)}
+
+/* Dos estilos: primario sólido (rojo) y secundario solo perfil (contorno en el mismo color) */
+.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{background:transparent;border:1.5px solid var(--pimiento);color:var(--pimiento);box-shadow:none}
+@media (hover:hover) and (pointer:fine){
+  .btn--line:hover,.top__nav a.top__cta:hover,.top__nav a.top__lang:hover,.top__burger:hover,.shop__toggle:hover{background:var(--pimiento);color:#fff!important;border-color:var(--pimiento)}
+}
+.btn--red{box-shadow:none;border-color:var(--pimiento)}
+
+/* Referencia Apple: primario relleno sin borde; secundario con perfil fino del mismo color */
+.btn--red{border:1px solid var(--pimiento);color:#fff;box-shadow:none;border-radius:999px}
+.btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{border-width:1px;border-radius:999px}
+.btn--line{padding-left:28px;padding-right:28px}
