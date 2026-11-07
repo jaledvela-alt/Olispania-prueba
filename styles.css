@@ -33,11 +33,11 @@ h1 em,h2 em{font-weight:400}
 .claim--lime{color:var(--verde)}
 
 .btn{display:inline-block;font:700 15px/1 var(--sans);text-decoration:none;padding:17px 26px;border-radius:999px;transition:transform .2s ease, background-color .2s ease}
-.btn:hover{transform:translateY(-2px)}
+@media (hover:hover) and (pointer:fine){.btn:hover{transform:translateY(-2px)}}
 .btn--red{background:var(--pimiento);color:#fff}
-.btn--red:hover{background:#B02F26}
+@media (hover:hover) and (pointer:fine){.btn--red:hover{background:#B02F26}}
 .btn--line{border:2px solid var(--oliva);color:var(--oliva)}
-.btn--line:hover{background:var(--oliva);color:var(--crema)}
+@media (hover:hover) and (pointer:fine){.btn--line:hover{background:var(--oliva);color:var(--crema)}}
 
 /* Cabecera */
 .top{position:sticky;top:0;z-index:20;background:rgba(245,239,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(47,61,20,.1)}
@@ -45,7 +45,7 @@ h1 em,h2 em{font-weight:400}
 .top__logo img{height:48px;width:auto}
 .top__nav{display:flex;gap:24px;align-items:center}
 .top__nav a{font-weight:500;font-size:15px;text-decoration:none;color:var(--oliva)}
-.top__nav a:hover{color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.top__nav a:hover{color:var(--hoja)}}
 .top__cta{background:var(--oliva);color:var(--crema)!important;padding:10px 18px;border-radius:999px}
 .top__burger{display:none;font:700 14px/1 var(--sans);background:none;border:2px solid var(--oliva);color:var(--oliva);border-radius:999px;padding:10px 16px;cursor:pointer}
 @media (max-width:980px){
@@ -85,7 +85,7 @@ h1 em,h2 em{font-weight:400}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .card{background:var(--crema-2);border-radius:22px;padding:26px 26px 30px;display:flex;flex-direction:column}
 .card img{height:260px;width:auto;object-fit:contain;margin:0 auto 22px;transition:transform .35s ease}
-.card:hover img{transform:translateY(-6px) rotate(-2deg)}
+@media (hover:hover) and (pointer:fine){.card:hover img{transform:translateY(-6px) rotate(-2deg)}}
 .card h3{font-size:24px;margin-bottom:8px}
 .card p{color:#4a4540;font-size:16px;flex:1}
 .tag{align-self:flex-start;margin-top:16px;font:700 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--hoja);border:1.5px solid var(--hoja);border-radius:999px;padding:7px 12px}
@@ -103,7 +103,7 @@ h1 em,h2 em{font-weight:400}
 .dark h2 em{color:var(--verde)}
 .chips{display:flex;flex-wrap:wrap;gap:10px}
 .chips li{font-weight:500;font-size:16px;padding:10px 18px;border-radius:999px;border:1.5px solid rgba(245,239,224,.35)}
-.chips li:hover{background:var(--verde);border-color:var(--verde);color:var(--verde-nombre)}
+@media (hover:hover) and (pointer:fine){.chips li:hover{background:var(--verde);border-color:var(--verde);color:var(--verde-nombre)}}
 .dark__img img{border-radius:22px;width:100%}
 @media (max-width:900px){.dark__in{grid-template-columns:1fr}.dark{padding:80px 0}}
 
@@ -142,7 +142,7 @@ h1 em,h2 em{font-weight:400}
 .foot__h{font:700 13px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--verde);margin-bottom:16px}
 .foot__list li{margin-bottom:8px}
 .foot__list a{text-decoration:none}
-.foot__list a:hover{text-decoration:underline}
+@media (hover:hover) and (pointer:fine){.foot__list a:hover{text-decoration:underline}}
 .foot__small{margin-top:56px;padding-top:22px;border-top:1px solid rgba(245,239,224,.15);font-size:13px!important}
 @media (max-width:760px){.foot__in{grid-template-columns:1fr}}
 
@@ -150,7 +150,7 @@ h1 em,h2 em{font-weight:400}
 .bar{background:var(--oliva);color:var(--crema);font-size:13px}
 .bar__in{display:flex;justify-content:flex-end;gap:24px;padding-top:8px;padding-bottom:8px}
 .bar a{text-decoration:none}
-.bar a:hover{text-decoration:underline}
+@media (hover:hover) and (pointer:fine){.bar a:hover{text-decoration:underline}}
 
 /* Nosotros arriba */
 .story{padding:110px 0}
@@ -179,7 +179,7 @@ h1 em,h2 em{font-weight:400}
 .cat figure img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
 .cat .fig--jar{background:var(--crema-2)}
 .cat .fig--jar img{height:86%;width:auto;object-fit:contain}
-.cat li:hover figure img{transform:scale(1.04)}
+@media (hover:hover) and (pointer:fine){.cat li:hover figure img{transform:scale(1.04)}}
 .cat h3{font-size:22px;margin-bottom:4px}
 .cat p{color:#4a4540;font-size:16px}
 .cat__more{margin-top:48px;text-align:center}
@@ -197,7 +197,7 @@ h1 em,h2 em{font-weight:400}
 .sec--alt{background:var(--crema-2)}
 .news{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .news a{display:flex;flex-direction:column;height:100%;background:var(--crema);border-radius:18px;padding:28px;text-decoration:none;transition:transform .2s ease}
-.news a:hover{transform:translateY(-4px)}
+@media (hover:hover) and (pointer:fine){.news a:hover{transform:translateY(-4px)}}
 .news time{font-size:14px;color:var(--hoja);font-weight:500}
 .news h3{font-size:21px;margin:12px 0 20px;flex:1}
 .news span{font-weight:700;font-size:15px;color:var(--oliva)}
@@ -237,7 +237,7 @@ h1 em,h2 em{font-weight:400}
 .seal{padding:96px 0}
 .teasers{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .teasers a{display:flex;flex-direction:column;height:100%;background:var(--crema);border-radius:22px;overflow:hidden;text-decoration:none;transition:transform .25s ease}
-.teasers a:hover{transform:translateY(-4px)}
+@media (hover:hover) and (pointer:fine){.teasers a:hover{transform:translateY(-4px)}}
 .teasers figure{background:var(--negro);aspect-ratio:1.4/1}
 .teasers img{width:100%;height:100%;object-fit:cover}
 .teasers h3{font-size:26px;margin:22px 26px 8px}
@@ -253,7 +253,7 @@ h1 em,h2 em{font-weight:400}
 .tile__fig--cover img{object-fit:cover}
 .tile__fig--jar{background:var(--crema-2)}
 .tile__fig--jar img{height:86%;width:auto}
-.tile:hover .tile__fig img{transform:scale(1.04)}
+@media (hover:hover) and (pointer:fine){.tile:hover .tile__fig img{transform:scale(1.04)}}
 .tile h3{font-size:22px;margin-bottom:4px}
 .tile p{color:#4a4540;font-size:16px;flex:1}
 .tile span{margin-top:10px;font-weight:700;font-size:14px;color:var(--hoja)}
@@ -263,7 +263,7 @@ h1 em,h2 em{font-weight:400}
 /* Página de categoría */
 .crumbs{font-size:14px;color:#6b645c;margin-bottom:28px}
 .crumbs a{color:var(--hoja);text-decoration:none;font-weight:500}
-.crumbs a:hover{text-decoration:underline}
+@media (hover:hover) and (pointer:fine){.crumbs a:hover{text-decoration:underline}}
 .chero{padding:40px 0 56px}
 .chero__in{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
 .chero--solo .chero__in{grid-template-columns:1fr;max-width:760px}
@@ -314,7 +314,7 @@ h1 em,h2 em{font-weight:400}
 .others__h{font-size:clamp(26px,3vw,36px);margin-bottom:24px}
 .others{display:flex;flex-wrap:wrap;gap:10px}
 .others a{display:inline-block;padding:10px 18px;border:1.5px solid var(--oliva);border-radius:999px;text-decoration:none;font-weight:500;font-size:15px;color:var(--oliva)}
-.others a:hover{background:var(--oliva);color:var(--crema)}
+@media (hover:hover) and (pointer:fine){.others a:hover{background:var(--oliva);color:var(--crema)}}
 .others__cta{margin-top:32px}
 .group__img{background:var(--negro);border-radius:22px;overflow:hidden;aspect-ratio:1.4/1;margin:0 0 28px;max-width:760px}
 .group__img img{width:100%;height:100%;object-fit:cover}
@@ -337,7 +337,7 @@ h1 em,h2 em{font-weight:400}
 .news--img a{padding:0 0 28px;overflow:hidden}
 .news--img figure{aspect-ratio:4/3;overflow:hidden;margin-bottom:20px;background:var(--crema-2)}
 .news--img figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:transform .4s ease,filter .4s ease}
-.news--img a:hover figure img{transform:scale(1.04);filter:none}
+@media (hover:hover) and (pointer:fine){.news--img a:hover figure img{transform:scale(1.04);filter:none}}
 .news--img time,.news--img h3{margin-left:28px;margin-right:28px}
 .news--img h3{margin-bottom:0}
 .news__more{margin-top:40px;text-align:center}
@@ -350,7 +350,7 @@ h1 em,h2 em{font-weight:400}
 .nw{background:var(--crema-2);border-radius:20px;overflow:hidden}
 .nw summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:20px;padding:16px 24px 16px 16px}
 .nw summary::-webkit-details-marker{display:none}
-.nw summary:hover{background:rgba(47,61,20,.05)}
+@media (hover:hover) and (pointer:fine){.nw summary:hover{background:rgba(47,61,20,.05)}}
 .nw__th{width:96px;height:72px;object-fit:cover;border-radius:12px;flex:none;filter:grayscale(1)}
 .nw__head{display:grid;gap:4px;flex:1;min-width:0}
 .nw__head time{font-size:14px;font-weight:500;color:var(--hoja)}
@@ -429,7 +429,7 @@ html.js .rv:not(.in){animation:rv-seguro 0s 3.5s forwards}
 .progress{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--verde);transform:scaleX(0);transform-origin:left;z-index:60;pointer-events:none}
 .totop{position:fixed;right:20px;bottom:20px;width:48px;height:48px;border-radius:50%;border:0;background:var(--oliva);color:var(--crema);cursor:pointer;z-index:50;opacity:0;translate:0 16px;pointer-events:none;transition:opacity .3s ease,translate .3s ease,background-color .2s ease;box-shadow:0 6px 20px rgba(35,31,30,.25)}
 .totop.show{opacity:1;translate:0 0;pointer-events:auto}
-.totop:hover{background:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.totop:hover{background:var(--hoja)}}
 .totop span{display:block;width:12px;height:12px;border-left:3px solid currentColor;border-top:3px solid currentColor;rotate:45deg;margin:18px auto 0}
 
 /* Portada: tarros que flotan y siguen el ratón */
@@ -443,18 +443,18 @@ html.js .rv:not(.in){animation:rv-seguro 0s 3.5s forwards}
 
 /* Botones con pequeño movimiento */
 .btn{transition:transform .2s ease,background-color .2s ease,color .2s ease,box-shadow .2s ease}
-.btn:hover{box-shadow:0 10px 24px rgba(35,31,30,.18)}
+@media (hover:hover) and (pointer:fine){.btn:hover{box-shadow:0 10px 24px rgba(35,31,30,.18)}}
 .btn:active{transform:translateY(0) scale(.98)}
 .tile h3,.cat h3{transition:color .2s ease}
-.tile:hover h3{color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.tile:hover h3{color:var(--hoja)}}
 .tile span{display:inline-block;transition:translate .25s ease}
-.tile:hover span{translate:6px 0}
+@media (hover:hover) and (pointer:fine){.tile:hover span{translate:6px 0}}
 .pcard{transition:translate .25s ease,box-shadow .25s ease,opacity .7s ease}
-.pcard:hover{translate:0 -4px;box-shadow:0 14px 30px rgba(35,31,30,.12)}
+@media (hover:hover) and (pointer:fine){.pcard:hover{translate:0 -4px;box-shadow:0 14px 30px rgba(35,31,30,.12)}}
 .pcard figure img{transition:transform .35s ease}
-.pcard:hover figure img{transform:scale(1.05)}
+@media (hover:hover) and (pointer:fine){.pcard:hover figure img{transform:scale(1.05)}}
 .chips li{transition:background-color .2s ease,color .2s ease,translate .2s ease}
-.chips li:hover{translate:0 -3px}
+@media (hover:hover) and (pointer:fine){.chips li:hover{translate:0 -3px}}
 
 /* Barras de la sección de energías */
 html.js .eco__bars i::after{transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.2,.7,.2,1) .3s}
@@ -486,10 +486,10 @@ html.js .eco.in .eco__bars li:nth-child(3) i::after{transition-delay:.7s}
 /* Menú con fondo negro */
 .top{background:#000;backdrop-filter:none;border-bottom:1px solid rgba(245,239,224,.12)}
 .top__nav a{color:var(--crema)}
-.top__nav a:hover{color:var(--verde)}
+@media (hover:hover) and (pointer:fine){.top__nav a:hover{color:var(--verde)}}
 .top__nav a[aria-current="page"]:not(.top__cta){color:var(--verde);text-decoration-color:var(--verde)}
 .top__cta{background:var(--verde);color:var(--verde-nombre)!important}
-.top__cta:hover{color:var(--verde-nombre)!important;background:#cfe31a}
+@media (hover:hover) and (pointer:fine){.top__cta:hover{color:var(--verde-nombre)!important;background:#cfe31a}}
 .top__cta[aria-current="page"]{background:var(--verde);color:var(--verde-nombre)!important;box-shadow:0 0 0 3px rgba(190,208,0,.35)}
 .top__burger{border-color:var(--crema);color:var(--crema)}
 .top.is-scrolled{box-shadow:0 8px 28px rgba(0,0,0,.35)}
@@ -508,7 +508,7 @@ html.js .eco.in .eco__bars li:nth-child(3) i::after{transition-delay:.7s}
 .legal__toc ol{list-style:none;counter-reset:t;display:grid;gap:2px;border-left:2px solid rgba(47,61,20,.2);padding-left:0}
 .legal__toc li{counter-increment:t}
 .legal__toc a{display:block;padding:7px 14px;text-decoration:none;color:var(--oliva);border-left:2px solid transparent;margin-left:-2px}
-.legal__toc a:hover{border-left-color:var(--hoja);background:rgba(47,61,20,.05)}
+@media (hover:hover) and (pointer:fine){.legal__toc a:hover{border-left-color:var(--hoja);background:rgba(47,61,20,.05)}}
 .legal__text section{margin-bottom:40px;scroll-margin-top:96px}
 .legal__text h2{font-size:clamp(22px,2.4vw,28px);margin-bottom:14px}
 .legal__text h3{font:700 16px/1.3 var(--sans);color:var(--oliva);margin:22px 0 8px}
@@ -564,8 +564,8 @@ html:not(.js) .shop__f,html:not(.js) .shop__sort,html:not(.js) .shop__toggle{dis
 .shop__active button::after{content:" ×";font-weight:700}
 .shop__grid{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
 .shop__card a{display:flex;flex-direction:column;height:100%;background:var(--crema-2);border-radius:20px;padding:14px 14px 18px;text-decoration:none;color:inherit;transition:transform .2s ease,box-shadow .2s ease}
-.shop__card a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,61,20,.12)}
-.shop__card a:hover img{transform:none}
+@media (hover:hover) and (pointer:fine){.shop__card a:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(47,61,20,.12)}}
+@media (hover:hover) and (pointer:fine){.shop__card a:hover img{transform:none}}
 .shop__card figure{position:relative;aspect-ratio:4/5;border-radius:14px;overflow:hidden;margin-bottom:14px}
 .shop__card img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px}
 .shop__card--cat figure{background:#1d1b1a}
@@ -602,7 +602,7 @@ html:not(.js) .shop__f,html:not(.js) .shop__sort,html:not(.js) .shop__toggle{dis
 
 /* ===== PÁGINA DE PRODUCTO (producto/*.html) ===== */
 a.plink{color:inherit;text-decoration:none}
-.pcard h3 a.plink:hover,.tbl a.plink:hover{color:var(--hoja);text-decoration:underline}
+@media (hover:hover) and (pointer:fine){.pcard h3 a.plink:hover,.tbl a.plink:hover{color:var(--hoja);text-decoration:underline}}
 .tbl a.plink{font-weight:700;color:var(--oliva)}
 .prod{padding:36px 0 80px}
 .prod__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start;margin-top:24px}
@@ -630,11 +630,11 @@ a.plink{color:inherit;text-decoration:none}
 .prod__nav a{display:grid;gap:4px;text-decoration:none;color:var(--oliva);font-weight:500;max-width:46%}
 .prod__nav a span{font:700 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--hoja)}
 .prod__nav .prod__next{margin-left:auto;text-align:right}
-.prod__nav a:hover{color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.prod__nav a:hover{color:var(--hoja)}}
 .prod__more h2{font-size:clamp(28px,3.2vw,40px);margin:0 0 26px}
 .prod__grid{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .prod__grid a{display:block;background:var(--crema);border-radius:18px;padding:14px 14px 18px;text-decoration:none;color:inherit;height:100%}
-.prod__grid a:hover{box-shadow:0 10px 24px rgba(47,61,20,.12)}
+@media (hover:hover) and (pointer:fine){.prod__grid a:hover{box-shadow:0 10px 24px rgba(47,61,20,.12)}}
 .prod__grid figure{aspect-ratio:4/5;border-radius:12px;overflow:hidden;position:relative;margin-bottom:12px}
 .prod__grid figure.is-cat{background:#1d1b1a}
 .prod__grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:6px}
@@ -692,10 +692,10 @@ section[id],footer[id]{scroll-margin-top:170px}
 /* Menú: fondo crema (como al principio) con logo vertical positivo */
 .top{background:rgba(245,239,224,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(47,61,20,.1)}
 .top__nav a{color:var(--oliva)}
-.top__nav a:hover{color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.top__nav a:hover{color:var(--hoja)}}
 .top__nav a[aria-current="page"]:not(.top__cta){color:var(--hoja);text-decoration-color:var(--hoja)}
 .top__cta{background:var(--oliva);color:var(--crema)!important}
-.top__cta:hover{background:var(--hoja);color:var(--crema)!important}
+@media (hover:hover) and (pointer:fine){.top__cta:hover{background:var(--hoja);color:var(--crema)!important}}
 .top__cta[aria-current="page"]{background:var(--hoja);color:var(--crema)!important;box-shadow:none}
 .top__burger{border-color:var(--oliva);color:var(--oliva)}
 .top.is-scrolled{box-shadow:0 8px 28px rgba(35,31,30,.10)}
@@ -715,17 +715,17 @@ section[id],footer[id]{scroll-margin-top:170px}
 
 /* Contacto: botón pequeño y discreto (solo contorno) */
 .top__nav a.top__cta{background:transparent;color:var(--oliva)!important;border:1.5px solid rgba(47,61,20,.45);padding:6px 14px;font-size:14px;line-height:1.3;border-radius:999px}
-.top__nav a.top__cta:hover{background:var(--oliva);color:var(--crema)!important;border-color:var(--oliva)}
+@media (hover:hover) and (pointer:fine){.top__nav a.top__cta:hover{background:var(--oliva);color:var(--crema)!important;border-color:var(--oliva)}}
 .top__nav a.top__cta[aria-current="page"]{background:transparent;color:var(--hoja)!important;border-color:var(--hoja);box-shadow:none}
 @media (max-width:980px){.top__nav a.top__cta{margin-top:12px;padding:12px 16px;font-size:16px}}
 .foot__contact{margin-top:14px}
 .foot__contact a{color:inherit;text-decoration:none}
-.foot__contact a:hover{color:var(--verde);text-decoration:underline}
+@media (hover:hover) and (pointer:fine){.foot__contact a:hover{color:var(--verde);text-decoration:underline}}
 
 /* Pie: enlaces sin subrayado; al pasar el ratón solo cambian a verde claro */
 .foot a,.foot a:hover,.foot__list a:hover,.foot__contact a:hover{text-decoration:none}
 .foot a{transition:color .2s ease}
-.foot a:hover,.foot__list a:hover,.foot__contact a:hover{color:var(--verde)}
+@media (hover:hover) and (pointer:fine){.foot a:hover,.foot__list a:hover,.foot__contact a:hover{color:var(--verde)}}
 
 /* «¿Tú de qué relleno eres?»: cada botón lleva a su producto */
 .chips li{padding:0}
@@ -799,14 +799,14 @@ a,button,summary,label,input,select{touch-action:manipulation;-webkit-tap-highli
 .nw summary:active,.prod__nav a:active,.shop__fs label:active{scale:.985}
 
 /* 2 · Muelles que se pueden interrumpir */
-.nw__chev{transition:transform .5s var(--spring),margin .5s var(--spring)}
-.nw[open] .nw__body{animation:abre-muelle .55s var(--spring)}
+.nw__chev{transition:transform .35s var(--spring),margin .35s var(--spring)}
+.nw[open] .nw__body{animation:abre-muelle .35s var(--spring)}
 @keyframes abre-muelle{from{opacity:0;translate:0 -10px;scale:.99}to{opacity:1;translate:0 0;scale:1}}
-.shop__f.is-open{animation:panel-in .5s var(--spring)}
+.shop__f.is-open{animation:panel-in .3s var(--spring)}
 @keyframes panel-in{from{opacity:0;translate:0 -10px}to{opacity:1;translate:0 0}}
-.shop__card:not([hidden]){animation:card-in .45s var(--out) both}
+.shop__card:not([hidden]){animation:card-in .3s var(--out) both}
 @keyframes card-in{from{opacity:0;translate:0 10px;scale:.985}to{opacity:1;translate:0 0;scale:1}}
-.shop__gamas:not([hidden]) .tile{animation:card-in .45s var(--out) both}
+.shop__gamas:not([hidden]) .tile{animation:card-in .3s var(--out) both}
 @media (hover:hover){
   .pcard:hover,.tile:hover,.shop__card a:hover{translate:0 -4px}
 }
@@ -885,11 +885,11 @@ html.js .rv{translate:0 14px;transition:opacity .55s ease,translate .7s var(--ou
 .health--bg h1 em{color:var(--verde);font-weight:400}
 .health--bg .claim--leaf{color:var(--verde)}
 .health--bg .facts li{color:rgba(245,239,224,.92);font-size:clamp(17px,1.6vw,21px);border-bottom:1px solid rgba(245,239,224,.22);padding:20px 0;transition:padding-left .45s var(--spring),border-color .3s ease,color .2s ease}
-.health--bg .facts li:hover{padding-left:14px;border-bottom-color:var(--verde)}
+@media (hover:hover) and (pointer:fine){.health--bg .facts li:hover{padding-left:14px;border-bottom-color:var(--verde)}}
 .health--bg .facts strong{color:var(--verde)}
 .health--bg .source{color:rgba(245,239,224,.7)}
 .chip{display:inline-block;margin:2px 2px;padding:3px 11px;border-radius:999px;border:1.5px solid rgba(245,239,224,.4);font-size:.82em;font-weight:500;line-height:1.4;color:var(--crema);transition:background-color .2s ease,color .2s ease,border-color .2s ease,scale .35s var(--spring)}
-.chip:hover{background:var(--verde);border-color:var(--verde);color:var(--verde-nombre);scale:1.06}
+@media (hover:hover) and (pointer:fine){.chip:hover{background:var(--verde);border-color:var(--verde);color:var(--verde-nombre);scale:1.06}}
 html.js .facts li.rv .chip{opacity:0;scale:.6;transition:opacity .4s ease,scale .6s var(--spring),background-color .2s ease,color .2s ease,border-color .2s ease}
 html.js .facts li.rv.in .chip{opacity:1;scale:1}
 html.js .facts li.rv.in .chip:nth-of-type(2){transition-delay:.1s}
@@ -916,9 +916,9 @@ html.js .facts li.rv.in .chip:nth-of-type(6){transition-delay:.42s}
 .contact--bg h1{letter-spacing:-.03em;font-size:clamp(52px,7vw,104px);line-height:1}
 .contact--bg .addr dd{font-size:clamp(16px,1.4vw,19px);line-height:1.5}
 .contact--bg .addr a{text-decoration:none!important;transition:color .2s ease}
-.contact--bg .addr a:hover{color:var(--verde)}
+@media (hover:hover) and (pointer:fine){.contact--bg .addr a:hover{color:var(--verde)}}
 .contact--bg .addr dt{position:relative;padding-left:0;transition:padding-left .45s var(--spring)}
-.contact--bg .addr dt:hover{padding-left:10px}
+@media (hover:hover) and (pointer:fine){.contact--bg .addr dt:hover{padding-left:10px}}
 .contact--bg .form{box-shadow:0 50px 90px -40px rgba(0,0,0,.65),0 12px 28px -18px rgba(0,0,0,.4)}
 .form input,.form textarea{transition:border-color .2s ease,box-shadow .35s var(--spring),background-color .2s ease}
 .form input:focus,.form textarea:focus{box-shadow:0 0 0 4px rgba(69,111,20,.18);background:#fff}
@@ -960,7 +960,7 @@ html.js .facts li.rv.in .chip:nth-of-type(6){transition-delay:.42s}
 .sec--stats + .moment{padding-top:24px;padding-bottom:96px}
 
 .chero__jars .jarlink{display:block;color:inherit;text-decoration:none;border-radius:18px;transition:transform .25s cubic-bezier(.2,.8,.2,1)}
-.chero__jars .jarlink:hover figcaption{color:var(--hoja,#456F14)}
+@media (hover:hover) and (pointer:fine){.chero__jars .jarlink:hover figcaption{color:var(--hoja,#456F14)}}
 .chero__jars .jarlink:active{transform:scale(.97)}
 .chero__jars .jarlink:focus-visible{outline:2px solid #456F14;outline-offset:3px}
 
@@ -969,7 +969,7 @@ html.js .facts li.rv.in .chip:nth-of-type(6){transition-delay:.42s}
 .nwlist>li:first-child{grid-column:1/-1}
 .nw{position:relative;background:var(--crema-2);border-radius:24px}
 .nw summary{flex-direction:column;align-items:stretch;gap:0;padding:0}
-.nw summary:hover{background:transparent}
+@media (hover:hover) and (pointer:fine){.nw summary:hover{background:transparent}}
 .nw__th{width:100%;height:auto;aspect-ratio:3/2;border-radius:0;object-fit:cover;filter:none}
 .nwlist>li:first-child .nw__th{aspect-ratio:21/9}
 .nw__head{padding:22px 64px 22px 28px;gap:8px}
@@ -1019,7 +1019,7 @@ footer.foot .wrap{max-width:var(--wrap);width:100%;margin-inline:auto;padding-le
 
 /* Selector de idioma ES / EN (cabecera) */
 .top__nav a.top__lang{font-size:13px;font-weight:700;letter-spacing:.08em;border:1.5px solid currentColor;border-radius:999px;padding:5px 10px;line-height:1;flex:0 0 auto}
-.top__nav a.top__lang:hover{color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.top__nav a.top__lang:hover{color:var(--hoja)}}
 @media (max-width:980px){.top__nav a.top__lang{align-self:center;margin-top:14px;padding:8px 16px;border-bottom:1.5px solid currentColor}}
 
 /* Portada: entrada dinámica de los tarros (saltan desde abajo, uno tras otro) */
@@ -1080,3 +1080,10 @@ html.js .tw .tw-ch.on{opacity:1}
 
 /* Móvil: «Abre, comparte, repite.» ocupa casi todo el ancho */
 @media (max-width:760px){.hero .hero__text h1{font-size:calc((100vw - 40px) / 4.6)}}
+
+/* Menú: fondo algo transparente; al hacer scroll se ve un poco el contenido de detrás */
+.top,.top.is-scrolled{background:rgba(245,239,224,.80);-webkit-backdrop-filter:blur(12px) saturate(1.2);backdrop-filter:blur(12px) saturate(1.2)}
+.top.is-scrolled{box-shadow:0 1px 0 rgba(47,61,20,.08)}
+
+/* Rendimiento: el cambio de altura del menú al hacer scroll no recalcula el resto de la página */
+.top{contain:layout style}

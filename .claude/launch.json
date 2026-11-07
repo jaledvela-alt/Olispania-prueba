@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "web-olispania",
+      "runtimeExecutable": "/bin/sh",
+      "runtimeArgs": ["-c", "cd '/private/tmp/claude-501/-Users-jaledvelamebar--claude-spares-spare-09Z2F0/2248bfcb-72c0-4f29-acc2-ba585c0f8f8e/scratchpad/web' && exec python3 -m http.server ${PORT:-8080}"],
+      "port": 8080
+    }
+  ]
+}
