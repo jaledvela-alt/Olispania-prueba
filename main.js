@@ -102,8 +102,29 @@
     var isHome = /(^|\/)(index\.html)?$/.test(location.pathname);
     if (!isHome || reduce || (window.scrollY || 0) > 24) { on(); return; }
     pi.addEventListener('animationend', function () { on(); });
-    setTimeout(function () {
-      top.classList.add('logo-drop');
+    /* Vídeo de la gota (WebM con transparencia, 5 s). Safari no pinta el alfa de VP9: ahí se usa la animación calculada de abajo */
+    var apple = /Apple/.test(navigator.vendor || '');
+    var probe = document.createElement('video');
+    var canVideo = !apple && probe.canPlayType && /maybe|probably/.test(probe.canPlayType('video/webm; codecs="vp9"'));
+    var runCalc;
+    if (canVideo) {
+      var vid = document.createElement('video');
+      vid.className = 'logo-video'; vid.muted = true; vid.defaultMuted = true; vid.playsInline = true; vid.preload = 'auto';
+      vid.setAttribute('aria-hidden', 'true'); vid.setAttribute('muted', ''); vid.setAttribute('playsinline', '');
+      vid.src = 'img/2026-11-07_Web_gota-logo_v2.webm'.replace(/^/, /^\/en\//.test(location.pathname) ? '../' : '');
+      var done = false;
+      var finish = function () { if (done) return; done = true; top.classList.add('pill-on'); requestAnimationFrame(function () { if (vid.parentNode) vid.parentNode.removeChild(vid); }); };
+      var fail = function () { if (done) return; done = true; if (vid.parentNode) vid.parentNode.removeChild(vid); runCalc(); };
+      vid.addEventListener('timeupdate', function () { if (vid.currentTime >= 3.6) finish(); });
+      vid.addEventListener('ended', finish);
+      vid.addEventListener('error', fail);
+      a.appendChild(vid);
+      var pr = vid.play(); if (pr && pr.catch) pr.catch(fail);
+      setTimeout(finish, 6500);
+      return;
+    }
+    runCalc = function () {
+    top.classList.add('logo-drop');
       /* la gota se calcula fotograma a fotograma (WAAPI): cuelga de un cuello fino, cae, se ensancha y el cuello se abre al final */
       var sm = function (t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
       var eo = function (t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); };
@@ -134,7 +155,8 @@
       var kf = [], N = 120, j;
       for (j = 0; j <= N; j++) kf.push({ clipPath: shape(j / N) });
       if (pill.animate) pill.animate(kf, { duration: 2400, easing: 'linear', fill: 'forwards' });
-    }, 250);
+    };
+    setTimeout(runCalc, 250);
     setTimeout(on, 4600); /* seguro por si la animación no llega a terminar */
   })();
   var ticking = false;

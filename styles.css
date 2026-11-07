@@ -1233,3 +1233,8 @@ header.top .top__logo .logo-pill img{flex:none;height:var(--pill-logo);width:aut
 .btn--red{border:1px solid var(--pimiento);color:#fff;box-shadow:none;border-radius:999px}
 .btn--line,.top__nav a.top__cta,.top__nav a.top__lang,.top__burger,.shop__toggle{border-width:1px;border-radius:999px}
 .btn--line{padding-left:28px;padding-right:28px}
+
+/* Vídeo de la gota (portada): mismo hueco que la pastilla; el vídeo lleva 6 px de margen alrededor de la etiqueta */
+.logo-video{position:absolute;top:0;left:50%;width:calc(var(--pill-w) * 1.047);height:auto;margin-left:calc(var(--pill-w) * -.5235);display:block;pointer-events:none;background:transparent}
+@media (max-width:980px){.logo-video{left:24px;margin-left:calc(var(--pill-w) * -.0235)}}
+@media (prefers-reduced-motion:reduce){.logo-video{display:none}}
