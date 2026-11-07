@@ -26,19 +26,19 @@
   });
 
   /* ---------- 2. Contadores ---------- */
-  var EN = document.documentElement.lang === 'en';
-  var NUM = /\d[\d.,]*/;
+  var LANG = document.documentElement.lang, EN = LANG === 'en', FR = LANG === 'fr';
+  var NUM = /\d[\d.,\u00a0\u202f]*/;
   function parseEs(txt) {
     var m = txt.match(NUM); if (!m) return null;
     var raw = m[0], dec = 0;
-    var D = EN ? '.' : ',', G = EN ? ',' : '.';
+    var D = EN ? '.' : ',';
     if (raw.indexOf(D) > -1) dec = raw.split(D)[1].length;
-    var val = parseFloat(raw.split(G).join('').replace(D, '.'));
+    var val = parseFloat(raw.replace(FR ? /[\u00a0\u202f]/g : (EN ? /,/g : /\./g), '').replace(D, '.'));
     if (isNaN(val)) return null;
     return { raw: raw, val: val, dec: dec };
   }
   function fmt(v, dec) {
-    return new Intl.NumberFormat(EN ? 'en-GB' : 'es-ES', { minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: 'always' }).format(v);
+    return new Intl.NumberFormat(EN ? 'en-GB' : (FR ? 'fr-FR' : 'es-ES'), { minimumFractionDigits: dec, maximumFractionDigits: dec, useGrouping: 'always' }).format(v);
   }
   function countUp(el) {
     var node = null;
@@ -87,7 +87,7 @@
   var bar = document.createElement('div'); bar.className = 'progress'; bar.setAttribute('aria-hidden', 'true');
   document.body.appendChild(bar);
   var up = document.createElement('button');
-  up.className = 'totop'; up.type = 'button'; up.setAttribute('aria-label', EN ? 'Back to top' : 'Volver arriba'); up.innerHTML = '<span aria-hidden="true"></span>';
+  up.className = 'totop'; up.type = 'button'; up.setAttribute('aria-label', EN ? 'Back to top' : (FR ? 'Retour en haut' : 'Volver arriba')); up.innerHTML = '<span aria-hidden="true"></span>';
   up.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
   document.body.appendChild(up);
   /* Pastilla negra: cae como una gota al entrar y se encoge al hacer scroll (el logo en negativo va dentro) */
@@ -111,7 +111,7 @@
       var vid = document.createElement('video');
       vid.className = 'logo-video'; vid.muted = true; vid.defaultMuted = true; vid.playsInline = true; vid.preload = 'auto';
       vid.setAttribute('aria-hidden', 'true'); vid.setAttribute('muted', ''); vid.setAttribute('playsinline', '');
-      vid.src = 'img/2026-11-07_Web_gota-logo_v2.webm'.replace(/^/, /^\/en\//.test(location.pathname) ? '../' : '');
+      vid.src = 'img/2026-11-07_Web_gota-logo_v2.webm'.replace(/^/, /^\/(en|fr)\//.test(location.pathname) ? '../' : '');
       var done = false;
       var finish = function () { if (done) return; done = true; top.classList.add('pill-on'); requestAnimationFrame(function () { if (vid.parentNode) vid.parentNode.removeChild(vid); }); };
       var fail = function () { if (done) return; done = true; if (vid.parentNode) vid.parentNode.removeChild(vid); runCalc(); };
@@ -175,7 +175,7 @@
   if (grid) {
     var group = grid.closest('.group') || grid.parentElement;
     var box = document.createElement('div'); box.className = 'finder';
-    box.innerHTML = (EN ? '<label for="buscar">Search products</label><input id="buscar" type="search" placeholder="Gherkins, banderillas, garlic…" autocomplete="off">' : '<label for="buscar">Buscar producto</label><input id="buscar" type="search" placeholder="Pepinillos, banderillas, ajos…" autocomplete="off">') + '<p class="finder__n" aria-live="polite"></p>';
+    box.innerHTML = (EN ? '<label for="buscar">Search products</label><input id="buscar" type="search" placeholder="Gherkins, banderillas, garlic…" autocomplete="off">' : FR ? '<label for="buscar">Rechercher un produit</label><input id="buscar" type="search" placeholder="Cornichons, banderillas, ails…" autocomplete="off">' : '<label for="buscar">Buscar producto</label><input id="buscar" type="search" placeholder="Pepinillos, banderillas, ajos…" autocomplete="off">') + '<p class="finder__n" aria-live="polite"></p>';
     group.parentElement.insertBefore(box, $('.group', group.parentElement)[0]);
     var cards = $('.pcard');
     var inp = box.querySelector('input'), msg = box.querySelector('.finder__n');
@@ -190,7 +190,7 @@
         var any = $('.pcard', g).some(function (c) { return !c.hidden; });
         if ($('.pcard', g).length) g.hidden = !any;
       });
-      msg.textContent = q ? (n ? n + (EN ? (n === 1 ? ' product' : ' products') : (n === 1 ? ' producto' : ' productos')) : (EN ? 'No products with that name.' : 'No hay productos con ese nombre.')) : '';
+      msg.textContent = q ? (n ? n + (EN ? (n === 1 ? ' product' : ' products') : FR ? (n === 1 ? ' produit' : ' produits') : (n === 1 ? ' producto' : ' productos')) : (EN ? 'No products with that name.' : FR ? 'Aucun produit portant ce nom.' : 'No hay productos con ese nombre.')) : '';
     });
   }
 

@@ -1238,3 +1238,89 @@ header.top .top__logo .logo-pill img{flex:none;height:var(--pill-logo);width:aut
 .logo-video{position:absolute;top:0;left:50%;width:calc(var(--pill-w) * 1.047);height:auto;margin-left:calc(var(--pill-w) * -.5235);display:block;pointer-events:none;background:transparent}
 @media (max-width:980px){.logo-video{left:24px;margin-left:calc(var(--pill-w) * -.0235)}}
 @media (prefers-reduced-motion:reduce){.logo-video{display:none}}
+
+/* Noticias: tarjetas visibles, varias por pantalla */
+.nwgrid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px}
+.nwc{background:var(--crema-2);border-radius:20px;padding:24px;height:100%;display:flex;flex-direction:column;gap:10px;border-top:4px solid var(--hoja);box-sizing:border-box}
+.nwc__img{width:100%;height:auto;border-radius:12px;margin-bottom:6px;display:block}
+.nwc--feder .nwc__img{filter:grayscale(1)}
+.nwc__meta{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0;font-size:14px;font-weight:500;color:var(--hoja)}
+.nwc h2{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2vw,23px);line-height:1.2;color:var(--oliva);margin:0}
+.nwc p{font-size:16px;color:var(--negro);margin:0}
+.nwc p.nwc__meta{font-size:14px;color:var(--hoja)}
+.nwc__more{margin-top:auto;padding-top:6px;font-weight:700;color:var(--pimiento);text-decoration:none}
+.nwc__more::after{content:" →"}
+.nwc__more:hover{text-decoration:underline}
+.nwc .nw__feder{width:120px;margin-top:10px;align-self:flex-start}
+@media (max-width:760px){.nwgrid{grid-template-columns:1fr}.nwc{padding:20px}}
+@media (max-width:980px) and (min-width:761px){.nwgrid{grid-template-columns:repeat(2,1fr)}}
+.rc .rc__l{font:700 11px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--hoja);margin-top:6px}
+
+/* Menú: Contacto y EN en verde */
+.top__nav a.top__cta,.top__nav a.top__lang{border-color:var(--hoja);color:var(--hoja)}
+@media (hover:hover) and (pointer:fine){.top__nav a.top__cta:hover,.top__nav a.top__lang:hover{background:var(--hoja);border-color:var(--hoja);color:#fff!important}}
+
+/* Menú: mismo espacio fijo entre todos los elementos, en las dos mitades */
+@media (min-width:981px){
+  .top__in{column-gap:clamp(32px,6.8vw,104px)}
+  .top__grp{gap:clamp(12px,1.7vw,30px)}
+  .top__grp--l{justify-content:flex-start}
+  .top__grp--r{justify-content:flex-end}
+}
+/* Menú: las dos mitades pegadas al logo, con el mismo espacio a cada lado */
+@media (min-width:981px){
+  .top__grp--l{justify-content:flex-end}
+  .top__grp--r{justify-content:flex-start}
+}
+@media (min-width:981px){
+  .top__in{column-gap:clamp(20px,3vw,64px)}
+  .top__grp{gap:clamp(10px,1.4vw,30px)}
+  .top__nav a{letter-spacing:.01em}
+}
+
+/* Recetas con foto */
+.rc{padding:0 0 24px;overflow:hidden;border-top:0}
+.rc>*:not(.nwc__img){margin-left:24px;margin-right:24px}
+.rc .nwc__img{border-radius:0;margin-bottom:8px;aspect-ratio:4/3;object-fit:cover}
+.rc .nwc__more{padding-top:10px}
+
+/* Recetas dinámicas */
+.rc__filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 28px}
+.rc__chip{font:600 15px/1 var(--sans);padding:11px 20px;border-radius:999px;border:1px solid var(--hoja);background:transparent;color:var(--hoja);cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.rc__chip:hover{transform:translateY(-1px)}
+.rc__chip.is-on{background:var(--hoja);color:#fff}
+.nwgrid--rc>li[hidden]{display:none}
+html.js .nwgrid--rc>li{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+html.js .nwgrid--rc>li.is-in{opacity:1;transform:none}
+.rc{transition:transform .3s ease,box-shadow .3s ease}
+.rc .nwc__img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.rc{position:relative}
+.rc .nwc__img{will-change:transform}
+@media (hover:hover) and (pointer:fine){.rc:hover{transform:translateY(-4px);box-shadow:0 18px 30px -18px rgba(47,61,20,.35)}.rc:hover .nwc__img{transform:scale(1.05)}}
+.rc>.nwc__img{width:calc(100% + 0px);margin-left:0!important;margin-right:0!important}
+.rc__d{margin:0 24px}
+.rc__d summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--oliva)}
+.rc__d summary::-webkit-details-marker{display:none}
+.rc__d summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-top:-3px;transition:transform .25s}
+.rc__d[open] summary::after{transform:rotate(-135deg);margin-top:3px}
+.rc__b{display:grid;gap:8px;padding-top:12px;animation:rcOpen .35s ease}
+@keyframes rcOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.rc .rc__d{margin-left:24px;margin-right:24px}
+@media (prefers-reduced-motion:reduce){html.js .nwgrid--rc>li{opacity:1;transform:none;transition:none}.rc,.rc .nwc__img{transition:none}.rc__b{animation:none}}
+.rc__chip{font-size:14px;padding:10px 16px}
+@media (max-width:760px){.rc__filters{flex-wrap:nowrap;overflow-x:auto;margin-right:-24px;padding-right:24px;scrollbar-width:none}.rc__filters::-webkit-scrollbar{display:none}.rc__chip{white-space:nowrap;flex:none}}
+
+/* Selector de idioma: una sola píldora con los otros dos idiomas (ES / EN / FR) */
+.top__nav .top__langs{display:inline-flex;align-items:stretch;flex:0 0 auto;border:1px solid var(--hoja);border-radius:999px;overflow:hidden}
+.top__nav .top__langs a{font-size:13px;font-weight:700;letter-spacing:.08em;line-height:1;padding:7px 11px;color:var(--hoja);border:0;border-radius:0;background:transparent}
+.top__nav .top__langs a+a{border-left:1px solid var(--hoja)}
+@media (hover:hover) and (pointer:fine){.top__nav .top__langs a:hover{background:var(--hoja);color:#fff}}
+@media (max-width:980px){.top__nav .top__langs{align-self:center;margin-top:14px}.top__nav .top__langs a{padding:9px 18px;font-size:14px;border-bottom:0}}
+/* Menú: en pantallas medianas se compacta un poco para que quepan los tres idiomas */
+@media (min-width:981px) and (max-width:1200px){
+  .top__nav a{font-size:14px}
+  .top__nav a.top__cta{padding:5px 12px;font-size:13px}
+  .top__grp{gap:11px}
+  .top__in{column-gap:20px}
+  .top__nav .top__langs a{padding:7px 9px;font-size:12px}
+}

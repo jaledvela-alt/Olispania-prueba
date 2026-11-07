@@ -16,9 +16,9 @@
   <link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css?v=102">
+  <link rel="stylesheet" href="styles.css?v=114">
 <script>document.documentElement.classList.add("js")</script>
-                                                              <link rel="canonical" href="https://www.olispania.es/aviso-legal.html">
+                                                                                                    <link rel="canonical" href="https://www.olispania.es/aviso-legal.html">
 </head>
 <body>
 
@@ -33,15 +33,16 @@
     <nav class="top__nav" id="menu" aria-label="Principal">
       <div class="top__grp top__grp--l">
         <a href="index.html">Inicio</a>
-        <a href="salud.html">Salud</a>
         <a href="calidad.html">Calidad</a>
         <a href="productos.html">Productos</a>
+        <a href="recetas.html">Recetas</a>
       </div>
       <div class="top__grp top__grp--r">
+        <a href="salud.html">Salud</a>
         <a href="mercados.html">Mercados</a>
         <a href="noticias.html">Noticias</a>
         <a href="contacto.html" class="top__cta">Contacto</a>
-        <a href="en/index.html" class="top__lang" hreflang="en" lang="en" aria-label="English">EN</a>
+        <span class="top__langs"><a href="en/index.html" hreflang="en" lang="en" aria-label="English">EN</a><a href="fr/index.html" hreflang="fr" lang="fr" aria-label="Français">FR</a></span>
       </div>
     </nav>
   </div>
@@ -96,6 +97,6 @@
   b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
   n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
 </script>
-<script src="main.js?v=21" defer></script>
+<script src="main.js?v=23" defer></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://www.olispania.es/">
   <link rel="alternate" hreflang="es" href="https://www.olispania.es/">
   <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/">
+  <link rel="alternate" hreflang="fr" href="https://www.olispania.es/fr/">
   <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/">
   <link rel="icon" href="img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
@@ -20,7 +21,7 @@
   <link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css?v=102">
+  <link rel="stylesheet" href="styles.css?v=114">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Olispania Aceitunas, S.L.", "url": "https://www.olispania.es/", "logo": "https://www.olispania.es/img/Olispania_simbolo_positivo.svg", "foundingDate": "2012", "telephone": "+34968716794", "email": "olispania@olispania.es", "address": {"@type": "PostalAddress", "addressLocality": "Jumilla", "addressRegion": "Murcia", "addressCountry": "ES"}}</script>
 </head>
@@ -37,15 +38,16 @@
     <nav class="top__nav" id="menu" aria-label="Principal">
       <div class="top__grp top__grp--l">
         <a href="index.html" aria-current="page">Inicio</a>
-        <a href="salud.html">Salud</a>
         <a href="calidad.html">Calidad</a>
         <a href="productos.html">Productos</a>
+        <a href="recetas.html">Recetas</a>
       </div>
       <div class="top__grp top__grp--r">
+        <a href="salud.html">Salud</a>
         <a href="mercados.html">Mercados</a>
         <a href="noticias.html">Noticias</a>
         <a href="contacto.html" class="top__cta">Contacto</a>
-        <a href="en/index.html" class="top__lang" hreflang="en" lang="en" aria-label="English">EN</a>
+        <span class="top__langs"><a href="en/index.html" hreflang="en" lang="en" aria-label="English">EN</a><a href="fr/index.html" hreflang="fr" lang="fr" aria-label="Français">FR</a></span>
       </div>
     </nav>
   </div>
@@ -88,7 +90,7 @@
         <p class="claim claim--leaf">Bienvenido</p>
         <h2>Dos familias,<br><em>una misma mesa.</em></h2>
         <p>Olispania Aceitunas, S.L. Empresa creada en 2012 tras la unión de dos familias con más de 30 años de experiencia en el sector, cuyo principal objetivo ha sido desarrollar un producto de máxima calidad.</p>
-        <p>Nuestra filosofía está también orientada a la excelencia en cuanto a la seguridad alimentaria y a la satisfacción del cliente, por ello mantenemos desde 2017 la certificación IFS con un nivel superior (96,35 sobre 100).</p>
+        <p>Nuestra filosofía está también orientada a la excelencia en cuanto a la seguridad alimentaria y a la satisfacción del cliente, por ello mantenemos desde 2017 la certificación IFS con un nivel superior (96,99 sobre 100).</p>
         <p>Nos interesa destacar nuestra amplia gama de rellenos entre los que se encuentran el de anchoa, pimiento, limón, salmón, gamba, chorizo, jamón y ajo.</p>
         <p>Disponemos también de un surtido de aliños y sabores elaborados con las variedades Manzanilla, Verdial, Gordal, Cacereña y Cuquillo. Esto junto con nuestros encurtidos, completan el catálogo de este año 2026.</p>
         <p>Trabajamos con el canal food service y con la gran distribución a nivel nacional e internacional, tanto con nuestras marcas (Olispania y Vitaloliva) como con la marca del distribuidor, en vidrio y en lata.</p>
@@ -196,6 +198,6 @@
   b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
   n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
 </script>
-<script src="main.js?v=21" defer></script>
+<script src="main.js?v=23" defer></script>
 </body>
 </html>
