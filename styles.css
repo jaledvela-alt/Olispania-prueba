@@ -1370,3 +1370,11 @@ html.js .nwgrid--rc>li.is-in{opacity:1;transform:none}
 .ifs__in{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:22px}
 .ifs__seal img{width:150px}
 .ifs p{margin-inline:auto}
+
+/* Menú: ancho fijo de 1180 px, centrado */
+@media (min-width:981px){
+  .top__in{max-width:1180px;width:100%;margin-inline:auto;padding-left:0;padding-right:0;box-sizing:content-box;column-gap:clamp(24px,3.5vw,56px)}
+}
+@media (min-width:981px) and (max-width:1260px){
+  .top__in{max-width:none;box-sizing:border-box;padding-left:20px;padding-right:20px;column-gap:14px}
+}
