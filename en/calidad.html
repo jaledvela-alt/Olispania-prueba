@@ -18,18 +18,27 @@
   <link rel="icon" href="../img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
   <link rel="icon" href="../favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-  <link rel="preload" href="../fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../fonts.css">
-  <link rel="stylesheet" href="../styles.css?v=115">
+  <link rel="stylesheet" href="../fonts.css?v=2">
+  <link rel="stylesheet" href="../styles.css?v=123">
 <script>document.documentElement.classList.add("js")</script>
 <style>
   /* Calidad en vertical: sello a pantalla completa y cuatro bloques apilados que se descubren al bajar */
+  /* Colores verdes invertidos: fondo verde oscuro del nombre, texto verde lima */
+  .seal--tall{background:var(--verde-nombre);color:var(--verde)}
+  .seal--tall h1,.seal--tall h2,.seal--tall .seal__num,.seal--tall p{color:var(--verde)}
   .seal--tall{min-height:0;display:flex;align-items:center;padding:48px 0 56px}
   .seal--tall .seal__in{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;row-gap:18px}
   .seal--tall .seal__num{justify-self:center;text-align:center;font-size:clamp(100px,13vw,190px);line-height:.9}
   .seal--tall p:not(.seal__num){margin-inline:auto;font-size:clamp(18px,1.6vw,22px)}
   .seal--tall h1{font-size:clamp(40px,5.4vw,76px)}
+  .seal--tall .seal__in>div{display:contents}
+  .seal--tall .claim{order:-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:0}
+  .seal--tall .seal__logo{margin:8px 0 0;background:var(--crema);border-radius:14px;padding:12px 18px;line-height:0}
+  .seal--tall .seal__logo img{width:150px;height:auto}
+  .seal--tall{padding:112px 0}
+  @media (min-width:900px){.seal--tall p:not(.seal__num):not(.claim){max-width:42ch}}
   .pillars--stack{grid-template-columns:1fr;gap:40px;padding-top:0}
   .pillars--stack li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;grid-row:auto;column-gap:clamp(40px,6vw,96px);min-height:0;align-items:center}
   .pillars--stack .pillars__img{grid-column:1;grid-row:1/-1;margin:0;aspect-ratio:16/9;border-radius:22px}
@@ -90,6 +99,7 @@
         <p class="claim">Quality</p>
         <h1>IFS Food, higher level.</h1>
         <p>Certified since 2017 to the most recognised international food safety standard. In our latest audit we reached 96.99%, above the previous year's score.</p>
+              <figure class="seal__logo"><img src="../img/web/ifs-food.png?v=2" alt="Logotipo IFS Food" width="112" height="63"></figure>
       </div>
     </div>
   </section>
@@ -175,6 +185,6 @@
     addEventListener('resize',run); run();
   })();
 </script>
-<script src="../main.js?v=24" defer></script>
+<script src="../main.js?v=28" defer></script>
 </body>
 </html>

@@ -17,10 +17,11 @@
   var targets = [];
   $(REVEAL.join(',')).forEach(function (el) {
     if (el.classList.contains('rv')) return;
+    if (el.classList.contains('hero__jars') && window.matchMedia('(max-width:900px)').matches) return;
     if (!reduce && el.matches(TW_SEL)) return; /* los títulos grandes se escriben letra a letra (punto 7) */
     var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
     var step = el.classList.contains('pcard') || el.classList.contains('tile') ? 4 : 6;
-    el.style.setProperty('--d', ((sibs % step) * 0.07).toFixed(2) + 's');
+    el.style.setProperty('--d', ((sibs % step) * 0.08).toFixed(2) + 's');
     el.classList.add('rv');
     targets.push(el);
   });
