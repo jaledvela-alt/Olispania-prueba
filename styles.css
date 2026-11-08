@@ -1324,3 +1324,6 @@ html.js .nwgrid--rc>li.is-in{opacity:1;transform:none}
   .top__in{column-gap:20px}
   .top__nav .top__langs a{padding:7px 9px;font-size:12px}
 }
+
+/* Móvil: el logo de la portada aparece con un fundido (sin animación de gota) */
+.top.pill-fade .logo-pill{transition:opacity 1s ease .15s,scale .7s var(--spring),box-shadow .6s ease}

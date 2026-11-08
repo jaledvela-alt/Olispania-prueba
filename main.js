@@ -101,6 +101,8 @@
     var on = function () { top.classList.remove('logo-drop'); top.classList.add('pill-on'); };
     var isHome = /(^|\/)(index\.html)?$/.test(location.pathname);
     if (!isHome || reduce || (window.scrollY || 0) > 24) { on(); return; }
+    /* Móvil / tablet: sin animación de gota; el logo aparece con un fundido */
+    if (matchMedia('(max-width:980px)').matches) { top.classList.add('pill-fade'); requestAnimationFrame(function () { requestAnimationFrame(on); }); return; }
     pi.addEventListener('animationend', function () { on(); });
     /* Vídeo de la gota (WebM con transparencia, 5 s). Safari no pinta el alfa de VP9: ahí se usa la animación calculada de abajo */
     var apple = /Apple/.test(navigator.vendor || '');
