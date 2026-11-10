@@ -1389,7 +1389,7 @@ html.is-safari{--serif:"Fraunces S",Georgia,serif}
 html.is-safari h1,html.is-safari .seal__num,html.is-safari .moment__big{font-family:"Fraunces D",Georgia,serif}
 html.is-safari h2{font-family:"Fraunces M",Georgia,serif}
 html.is-safari h3,html.is-safari .lead{font-family:"Fraunces S",Georgia,serif}
-@media (max-width:760px){html.is-safari h1{font-family:"Fraunces M",Georgia,serif}}
+@media (max-width:900px){h1,.seal__num,.moment__big{font-variation-settings:"opsz" 100}h2{font-variation-settings:"opsz" 48}}
 
 /* Lupa del menú y panel de búsqueda de productos */
 .top__search{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex:0 0 auto;width:36px;height:36px;padding:0;border:0;border-radius:999px;background:transparent;color:var(--oliva);cursor:pointer;transition:color .2s,background-color .2s}
