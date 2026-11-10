@@ -2,6 +2,8 @@
    Todo es opcional: sin JavaScript o con «reducir movimiento» la web se ve completa y estática. */
 (function () {
   'use strict';
+  /* Safari (WebKit) no aplica solo el tamaño óptico de Fraunces: se marca para fijarlo en el CSS */
+  if (/Apple/.test(navigator.vendor || '')) document.documentElement.classList.add('is-safari');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var $ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
@@ -127,40 +129,49 @@
       return;
     }
     runCalc = function () {
-    top.classList.add('logo-drop');
-      /* la gota se calcula fotograma a fotograma (WAAPI): cuelga de un cuello fino, cae, se ensancha y el cuello se abre al final */
-      var sm = function (t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); };
-      var eo = function (t) { t = Math.max(0, Math.min(1, t)); return 1 - Math.pow(1 - t, 3); };
-      var eio = function (t) { t = Math.max(0, Math.min(1, t)); return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+      top.classList.add('logo-drop');
+      /* Réplica en código del vídeo: cae una gota, se aplasta contra el fondo de la etiqueta y el aceite la llena de abajo arriba (superficie ondulada); al final aparece el logo */
+      var H = pill.offsetHeight || 221, T = 2400, ND = 96;
+      var KEY = [ /* ms, nivel, ancho, menisco, onda */
+        [0, 0, 0, 0, 0], [440, .02, .12, .02, 0], [500, .09, .40, .04, 0], [750, .18, .90, .04, .005],
+        [1000, .38, 1, 0, .012], [1250, .59, 1, 0, .015], [1500, .77, 1, 0, .015], [1750, .88, 1, 0, .012],
+        [2000, .985, 1, 0, .008], [2250, 1.02, 1, 0, 0], [2400, 1.02, 1, 0, 0]
+      ];
+      var at = function (t) {
+        for (var i = 1; i < KEY.length; i++) if (t <= KEY[i][0]) {
+          var p = KEY[i - 1], q = KEY[i], k = (t - p[0]) / (q[0] - p[0]), r = [];
+          for (var j = 1; j < 5; j++) r.push(p[j] + (q[j] - p[j]) * k);
+          return r;
+        }
+        return [KEY[KEY.length - 1][1], 1, 0, 0];
+      };
       var f1 = function (v) { return (Math.round(v * 10) / 10) + '%'; };
       var shape = function (t) {
-        var u = Math.min(t / .5, 1);
-        var F = .025 + .975 * Math.pow(u, 2.1);                      /* frente de la gota: cae acelerando */
-        var wb = .16 + .84 * eo(Math.min(t / .52, 1));                /* ancho del bulbo */
-        var o = eio((t - .5) / .42);                                  /* apertura del cuello al final */
-        var wn = (.05 - .02 * Math.min(u, 1)) * (1 - o) + o;          /* ancho del cuello */
-        var hb = Math.min(.12 + .5 * wb, F);                          /* alto del bulbo */
-        var ry = Math.min(.28, hb * .6);                              /* redondeo inferior */
-        var ys = [], i, n = 18, m = 14;
-        for (i = 0; i < n; i++) ys.push((F - ry) * i / n);
-        for (i = 0; i <= m; i++) ys.push(F - ry + ry * Math.sin(Math.PI / 2 * i / m));
-        var L = [], R = [];
-        ys.forEach(function (y) {
-          var w = wn + (wb - wn) * sm((y - (F - hb)) / (hb * .75));
-          if (y > F - ry) { var q = (y - (F - ry)) / ry; w *= Math.sqrt(Math.max(0, 1 - q * q)); }
-          L.push(50 - w * 50); R.push(50 + w * 50);
-        });
-        var pts = [], k;
-        for (k = 0; k < ys.length; k++) pts.push(f1(L[k]) + ' ' + f1(ys[k] * 100));
-        for (k = ys.length - 1; k >= 0; k--) pts.push(f1(R[k]) + ' ' + f1(ys[k] * 100));
+        var v = at(t), lv = v[0], hw = v[1], mn = v[2], wv = v[3], n = 20, i, pts = [];
+        if (hw < .02) return 'polygon(50% 100%,50% 100%,50% 100%)';
+        for (i = 0; i <= n; i++) {
+          var u = i / n * 2 - 1, x = 50 + u * hw * 50;
+          var y = (1 - lv) * 100 + mn * 100 * (1 - u * u) + wv * 100 * Math.sin(u * 4.2 + t / 170) * Math.min(1, lv * 4);
+          pts.push(f1(x) + ' ' + f1(Math.max(-2, y)));
+        }
+        pts.push(f1(50 + hw * 50) + ' 101%'); pts.push(f1(50 - hw * 50) + ' 101%');
         return 'polygon(' + pts.join(',') + ')';
       };
-      var kf = [], N = 120, j;
-      for (j = 0; j <= N; j++) kf.push({ clipPath: shape(j / N) });
-      if (pill.animate) pill.animate(kf, { duration: 2400, easing: 'linear', fill: 'forwards' });
+      var kf = [], j;
+      for (j = 0; j <= ND; j++) kf.push({ clipPath: shape(j * T / ND) });
+      var anim = pill.animate ? pill.animate(kf, { duration: T, easing: 'linear', fill: 'forwards' }) : null;
+      /* la gota que cae */
+      var y0 = H * .17 - 11, y1 = H * .64 - 11, y2 = H * .95 - 11;
+      if (ball.animate) ball.animate([
+        { translate: '0 ' + y0 + 'px', opacity: 1, offset: 0 },
+        { translate: '0 ' + y1 + 'px', opacity: 1, offset: .55 },
+        { translate: '0 ' + y2 + 'px', opacity: 1, offset: .98 },
+        { translate: '0 ' + y2 + 'px', opacity: 0, offset: 1 }
+      ], { duration: 450, easing: 'linear', fill: 'none' });
+      setTimeout(function () { on(); if (anim) anim.cancel(); }, T + 150);
     };
     setTimeout(runCalc, 250);
-    setTimeout(on, 4600); /* seguro por si la animación no llega a terminar */
+    setTimeout(on, 4000); /* seguro por si la animación no llega a terminar */
   })();
   var ticking = false;
   function onScroll() {
@@ -261,4 +272,32 @@
       check();
     });
   }
+
+  /* ---------- Lupa del menú: busca productos (lleva al buscador de Productos con ?q=) ---------- */
+  (function () {
+    var grp = document.querySelector('.top__nav .top__grp--r'), prod = document.querySelector('.top__nav a[href$="productos.html"]'), hdr = document.querySelector('header.top, .top');
+    if (!grp || !prod || !hdr) return;
+    var L = document.documentElement.lang;
+    var T = L === 'en' ? { b: 'Search products', ph: 'Anchovy, gherkins, 850 ml…', go: 'Search', x: 'Close' }
+          : L === 'fr' ? { b: 'Rechercher des produits', ph: 'Anchois, cornichons, 850 ml…', go: 'Rechercher', x: 'Fermer' }
+          : { b: 'Buscar productos', ph: 'Anchoa, pepinillos, 850 ml…', go: 'Buscar', x: 'Cerrar' };
+    var btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'top__search'; btn.setAttribute('aria-label', T.b); btn.setAttribute('aria-expanded', 'false');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="top__search-t">' + T.b + '</span>';
+    grp.appendChild(btn);
+    var form = document.createElement('form');
+    form.className = 'top-search'; form.setAttribute('role', 'search'); form.method = 'get'; form.action = prod.getAttribute('href'); form.hidden = true;
+    form.innerHTML = '<div class="top-search__in"><input type="search" name="q" placeholder="' + T.ph + '" autocomplete="off" aria-label="' + T.b + '"><button type="submit" class="btn btn--red">' + T.go + '</button><button type="button" class="top-search__x" aria-label="' + T.x + '">&times;</button></div>';
+    hdr.appendChild(form);
+    var inp = form.querySelector('input');
+    var open = function (v) {
+      form.hidden = !v; btn.setAttribute('aria-expanded', v ? 'true' : 'false');
+      if (v) { var b = document.querySelector('.top__burger'), n = document.getElementById('menu'); if (b && n && n.classList.contains('is-open')) { n.classList.remove('is-open'); b.setAttribute('aria-expanded', 'false'); } setTimeout(function () { inp.focus(); }, 30); } else btn.focus();
+    };
+    btn.addEventListener('click', function () { open(form.hidden); });
+    form.querySelector('.top-search__x').addEventListener('click', function () { open(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !form.hidden) open(false); });
+    document.addEventListener('click', function (e) { if (!form.hidden && !hdr.contains(e.target)) open(false); });
+    form.addEventListener('submit', function (e) { if (!inp.value.trim()) { e.preventDefault(); inp.focus(); return; } form.action = prod.getAttribute('href') + '#buscador'; });
+  })();
 })();

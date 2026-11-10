@@ -20,8 +20,8 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css?v=2">
-  <link rel="stylesheet" href="styles.css?v=124">
+  <link rel="stylesheet" href="fonts.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=132">
 <script>document.documentElement.classList.add("js")</script>
 <style>
   /* Salud en vertical: la foto queda fija detrás y los beneficios pasan uno a uno, a lo grande */
@@ -61,9 +61,10 @@
         <a href="calidad.html">Calidad</a>
         <a href="productos.html">Productos</a>
         <a href="recetas.html">Recetas</a>
+        <a href="salud.html" aria-current="page">Salud</a>
       </div>
       <div class="top__grp top__grp--r">
-        <a href="salud.html" aria-current="page">Salud</a>
+        
         <a href="mercados.html">Mercados</a>
         <a href="noticias.html">Noticias</a>
         <a href="contacto.html" class="top__cta">Contacto</a>
@@ -133,6 +134,6 @@
   b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);n.classList.toggle('is-open',!o)});
   n.addEventListener('click',e=>{if(e.target.tagName==='A'){b.setAttribute('aria-expanded','false');n.classList.remove('is-open')}});
 </script>
-<script src="main.js?v=28" defer></script>
+<script src="main.js?v=32" defer></script>
 </body>
 </html>
