@@ -1421,3 +1421,11 @@ html.is-safari h3,html.is-safari .lead{font-family:"Fraunces S",Georgia,serif}
 
 /* Móvil: más aire entre «repite.» y el texto de debajo */
 @media (max-width:900px){.hero h1{margin-bottom:32px}}
+
+/* Portada: últimas noticias */
+.homenews{padding:24px 0 72px}
+.homenews .sec__head{margin-bottom:28px}
+.homenews .nwgrid{max-width:none}
+.homenews .nwc h3{font-family:var(--serif);font-weight:600;font-size:clamp(19px,2vw,23px);line-height:1.2;color:var(--oliva);margin:0}
+.homenews__all{margin:32px 0 0;display:flex;justify-content:center}
+@media (max-width:900px){.homenews{padding:8px 0 48px}}
