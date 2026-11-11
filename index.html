@@ -21,7 +21,7 @@
   <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="fonts.css?v=4">
-  <link rel="stylesheet" href="styles.css?v=133">
+  <link rel="stylesheet" href="styles.css?v=134">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Olispania Aceitunas, S.L.", "url": "https://www.olispania.es/", "logo": "https://www.olispania.es/img/Olispania_simbolo_positivo.svg", "foundingDate": "2012", "telephone": "+34968716794", "email": "olispania@olispania.es", "address": {"@type": "PostalAddress", "addressLocality": "Jumilla", "addressRegion": "Murcia", "addressCountry": "ES"}}</script>
 </head>
@@ -81,6 +81,37 @@
       var box=document.querySelector('.hero__jars'),done=false;function go(){if(!done){done=true;box.classList.add('is-in');}}
       Promise.all([].map.call(j,function(im){return im.decode?im.decode().catch(function(){}):0;})).then(go);setTimeout(go,1500);})();
       </script>
+    </div>
+  </section>
+
+  <!-- LATAS -->
+  <section id="latas" class="latas" aria-labelledby="latas-h">
+    <div class="wrap">
+      <header class="latas__head">
+        <p class="claim claim--leaf">Nuestras latas</p>
+        <h2 id="latas-h">Tres latas, <em>tres formas de abrir.</em></h2>
+      </header>
+      <ul class="latas__grid">
+        <li class="lata">
+          <h3>Serie Oro</h3>
+          <p>Lata de 12 oz. Descripción por confirmar.</p>
+          <a class="lata__img lata__img--oro" href="serie-oro.html" aria-label="Ver Serie Oro"><img src="img/prod/serie-oro-lata-12oz.webp?v=2" alt="Lata Serie Oro de 12 oz" loading="lazy" width="534" height="983"></a>
+          <a class="btn btn--red" href="serie-oro.html">Ver Serie Oro</a>
+        </li>
+        <li class="lata">
+          <h3>Extragrandes</h3>
+          <p>Lata de 12 oz. Descripción por confirmar.</p>
+          <a class="lata__img lata__img--xl" href="aceitunas-verdes-rellenas-extragrandes.html" aria-label="Ver aceitunas extragrandes"><img src="img/prod/lata-lata-12oz-extragrandes.webp?v=1" alt="Lata de 12 oz de aceitunas extragrandes" loading="lazy" width="486" height="900"></a>
+          <a class="btn btn--red" href="aceitunas-verdes-rellenas-extragrandes.html">Ver extragrandes</a>
+        </li>
+        <li class="lata">
+          <h3>Sabores</h3>
+          <p>Rellenas de sabores. Descripción por confirmar.</p>
+          <a class="lata__img lata__img--sab" href="10-onzas-sabores.html" aria-label="Ver sabores"><img src="img/prod/10oz-limon.webp" alt="Aceitunas verdes rellenas de limón" loading="lazy" width="610" height="900"></a>
+          <a class="btn btn--red" href="10-onzas-sabores.html">Ver sabores</a>
+        </li>
+      </ul>
+      <p class="latas__cta"><a class="btn btn--line" href="productos.html">Ver todos los productos</a></p>
     </div>
   </section>
 

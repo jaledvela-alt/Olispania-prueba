@@ -1421,3 +1421,21 @@ html.is-safari h3,html.is-safari .lead{font-family:"Fraunces S",Georgia,serif}
 
 /* Móvil: más aire entre «repite.» y el texto de debajo */
 @media (max-width:900px){.hero h1{margin-bottom:32px}}
+
+/* Portada · sección de latas */
+.latas{padding:96px 0 88px}
+.latas__head{text-align:center;margin-bottom:48px}
+.latas__head h2{font-size:clamp(32px,4.4vw,52px);margin-top:14px}
+.latas__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.lata{display:flex;flex-direction:column;align-items:center;text-align:center}
+.lata h3{font-size:clamp(26px,2.6vw,34px);color:var(--hoja)}
+.lata p{margin:10px 0 22px;max-width:30ch;color:color-mix(in srgb,var(--negro) 78%,var(--crema))}
+.lata__img{display:flex;align-items:flex-end;justify-content:center;width:100%;aspect-ratio:4/5;border-radius:22px;padding:8% 10% 6%;margin-bottom:26px;overflow:hidden;background:var(--crema-2);transition:background-color .25s ease}
+.lata__img--oro{background:linear-gradient(180deg,#efe3bf,#e3cf92)}
+.lata__img--xl{background:linear-gradient(180deg,#e4ebc4,#cfdc8f)}
+.lata__img--sab{background:linear-gradient(180deg,#f3dcd6,#e8b9ad)}
+.lata__img img{height:100%;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(35,20,5,.3));transition:transform .3s ease}
+@media (hover:hover) and (pointer:fine){.lata__img:hover img{transform:translateY(-6px) rotate(-2deg)}}
+.latas__cta{text-align:center;margin-top:48px}
+@media (max-width:900px){.latas__grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;gap:48px}.latas{padding:72px 0}}
+@media (prefers-reduced-motion:reduce){.lata__img img{transition:none}}
