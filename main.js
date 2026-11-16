@@ -8,11 +8,11 @@
   var $ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
   /* ---------- 1. Aparición al hacer scroll ---------- */
-  var TW_SEL = 'main h1, .moment__big, .contact__lema, .welcome h2, .dark__text h2';
+  var TW_SEL = 'main h1:not(.chero h1):not(.prod h1), .moment__big, .contact__lema, .welcome h2, .dark__text h2';
   var REVEAL = [
     '.hero__text > *', '.hero__jars', '.sec__head', '.welcome__text > *', '.welcome__img',
     '.ifs__in > *', '.eco__head > *', '.eco__stats li', '.eco__money > *', '.perte__img',
-    '.chero__text > *', '.chero__img', '.chero__jars figure', '.tbl', '.pcard', '.tile',
+    '.chero__text > *', '.prod h1', '.chero__img', '.chero__jars figure', '.tbl', '.pcard', '.tile',
     '.pillars li', '.facts li', '.addr > *', '.form > *', '.stats li', '.nw', '.contact__in > *', '.health__in > *', '.seal__in > *',
     '.story__in > *', '.moment__big', '.moment .claim', '.foot__in > *', '.others'
   ];
