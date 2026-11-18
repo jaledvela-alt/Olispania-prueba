@@ -3,32 +3,44 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Calidad · Olispania</title>
-  <meta name="description" content="IFS Food nivel superior (96,35/100) desde 2017. Selección, catas, I+D y trazabilidad.">
-  <meta property="og:title" content="Olispania · Abre, comparte, repite.">
-  <meta property="og:description" content="Aceitunas, encurtidos y aliños: el aperitivo completo, hecho en Murcia.">
-  <meta property="og:image" content="https://www.olispania.es/img/cat/pdf-pg03.webp">
+  <title>Calidad IFS Food nivel superior | Olispania</title>
+  <meta name="description" content="IFS Food nivel superior desde 2017, con 96,99/100 en la última auditoría. Así se cuida cada aceituna: selección, catas, I+D y trazabilidad.">
+  <meta property="og:title" content="Calidad IFS Food nivel superior | Olispania">
+  <meta property="og:description" content="IFS Food nivel superior desde 2017, con 96,99/100 en la última auditoría. Así se cuida cada aceituna: selección, catas, I+D y trazabilidad.">
+  <meta property="og:image" content="https://olispania.es/img/web/2026-11-18_Web_og-aperitivo_v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:locale" content="es_ES">
   <meta name="theme-color" content="#2F3D14">
-  <link rel="canonical" href="https://www.olispania.es/calidad.html">
-  <link rel="alternate" hreflang="es" href="https://www.olispania.es/calidad.html">
-  <link rel="alternate" hreflang="en" href="https://www.olispania.es/en/calidad.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.olispania.es/calidad.html">
+  <link rel="canonical" href="https://olispania.es/calidad.html">
+  <link rel="alternate" hreflang="es" href="https://olispania.es/calidad.html">
+  <link rel="alternate" hreflang="en" href="https://olispania.es/en/calidad.html">
+  <link rel="alternate" hreflang="fr" href="https://olispania.es/fr/calidad.html">
+  <link rel="alternate" hreflang="x-default" href="https://olispania.es/calidad.html">
   <link rel="icon" href="img/Olispania_simbolo_positivo.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preload" href="fonts/dm-sans-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="styles.css?v=101">
+  <link rel="stylesheet" href="fonts.css?v=5">
+  <link rel="stylesheet" href="styles.css?v=149">
 <script>document.documentElement.classList.add("js")</script>
 <style>
   /* Calidad en vertical: sello a pantalla completa y cuatro bloques apilados que se descubren al bajar */
+  /* Colores verdes invertidos: fondo verde oscuro del nombre, texto verde lima */
+  .seal--tall{background:var(--verde-nombre);color:var(--verde)}
+  .seal--tall h1,.seal--tall h2,.seal--tall .seal__num,.seal--tall p{color:var(--verde)}
   .seal--tall{min-height:0;display:flex;align-items:center;padding:48px 0 56px}
   .seal--tall .seal__in{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;row-gap:18px}
   .seal--tall .seal__num{justify-self:center;text-align:center;font-size:clamp(100px,13vw,190px);line-height:.9}
   .seal--tall p:not(.seal__num){margin-inline:auto;font-size:clamp(18px,1.6vw,22px)}
   .seal--tall h1{font-size:clamp(40px,5.4vw,76px)}
+  .seal--tall .seal__in>div{display:contents}
+  .seal--tall .claim{order:-1;font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:0}
+  .seal--tall .seal__logo{margin:8px 0 0;background:var(--crema);border-radius:14px;padding:12px 18px;line-height:0}
+  .seal--tall .seal__logo img{width:150px;height:auto}
+  .seal--tall{padding:112px 0}
+  @media (min-width:900px){.seal--tall p:not(.seal__num):not(.claim){max-width:42ch}}
   .pillars--stack{grid-template-columns:1fr;gap:40px;padding-top:0}
   .pillars--stack li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:1fr auto auto 1fr;grid-row:auto;column-gap:clamp(40px,6vw,96px);min-height:0;align-items:center}
   .pillars--stack .pillars__img{grid-column:1;grid-row:1/-1;margin:0;aspect-ratio:16/9;border-radius:22px}
@@ -50,6 +62,7 @@
     html.js .pillars--stack li.rv .pillars__img{clip-path:none}
   }
   </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://olispania.es/"}, {"@type": "ListItem", "position": 2, "name": "Calidad", "item": "https://olispania.es/calidad.html"}]}</script>
 </head>
 <body>
 
@@ -64,15 +77,17 @@
     <nav class="top__nav" id="menu" aria-label="Principal">
       <div class="top__grp top__grp--l">
         <a href="index.html">Inicio</a>
-        <a href="salud.html">Salud</a>
         <a href="calidad.html" aria-current="page">Calidad</a>
         <a href="productos.html">Productos</a>
+        <a href="recetas.html">Recetas</a>
+        <a href="salud.html">Salud</a>
       </div>
       <div class="top__grp top__grp--r">
+        
         <a href="mercados.html">Mercados</a>
         <a href="noticias.html">Noticias</a>
         <a href="contacto.html" class="top__cta">Contacto</a>
-        <a href="en/calidad.html" class="top__lang" hreflang="en" lang="en" aria-label="English">EN</a>
+        <span class="top__langs"><a href="en/calidad.html" hreflang="en" lang="en" aria-label="English">EN</a><a href="fr/calidad.html" hreflang="fr" lang="fr" aria-label="Français">FR</a></span>
       </div>
     </nav>
   </div>
@@ -83,11 +98,12 @@
   <!-- CALIDAD -->
   <section id="calidad" class="seal seal--tall">
     <div class="wrap seal__in">
-      <p class="seal__num">96,35<small>/100</small></p>
+      <p class="seal__num">96,99<small>/100</small></p>
       <div>
         <p class="claim">Calidad</p>
         <h1>IFS Food, nivel superior.</h1>
-        <p>Certificados desde 2017 con la norma internacional de seguridad alimentaria más reconocida.</p>
+        <p>Certificados desde 2017 con la norma internacional de seguridad alimentaria más reconocida. En la última auditoría hemos alcanzado un 96,99 %, por encima de la nota del año anterior.</p>
+              <figure class="seal__logo"><img src="img/web/ifs-food.png?v=2" alt="Logotipo IFS Food" width="112" height="63"></figure>
       </div>
     </div>
   </section>
@@ -173,6 +189,7 @@
     addEventListener('resize',run); run();
   })();
 </script>
-<script src="main.js?v=19" defer></script>
+<script src="main.js?v=36" defer></script>
+<script src="interactivo.js?v=6" defer></script>
 </body>
 </html>

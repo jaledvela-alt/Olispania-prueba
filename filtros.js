@@ -17,7 +17,7 @@
   var gamas = shop.querySelector('.shop__gamas');
   var sortBox = shop.querySelector('.shop__sort');
   var showAll = false;
-  var EN = document.documentElement.lang === 'en', LOC = EN ? 'en' : 'es';
+  var EN = document.documentElement.lang === 'en', FR = document.documentElement.lang === 'fr', LOC = EN ? 'en' : (FR ? 'fr' : 'es');
   var nGamas = gamas.querySelectorAll('.tile').length;
   var toggle = shop.querySelector('.shop__toggle');
   var badge = shop.querySelector('.shop__badge');
@@ -46,7 +46,7 @@
     cards.forEach(function (c) { var ok = matches(c, s); c.hidden = !ok; if (ok) n++; });
     // sin filtros: solo las gamas; con filtros o buscador: productos
     gamas.hidden = filtering; grid.hidden = !filtering; sortBox.hidden = !filtering;
-    count.textContent = filtering ? n + (EN ? (n === 1 ? ' product' : ' products') : (n === 1 ? ' producto' : ' productos')) : nGamas + (EN ? ' ranges' : ' gamas');
+    count.textContent = filtering ? n + (EN ? (n === 1 ? ' product' : ' products') : FR ? (n === 1 ? ' produit' : ' produits') : (n === 1 ? ' producto' : ' productos')) : nGamas + (EN ? ' ranges' : FR ? ' gammes' : ' gamas');
     empty.hidden = !filtering || n > 0;
     // recuento por opción (sin contar el propio grupo) y opciones vacías atenuadas
     boxes.forEach(function (b) {
@@ -61,7 +61,7 @@
       var li = document.createElement('li');
       var btn = document.createElement('button'); btn.type = 'button';
       btn.textContent = b.parentNode.querySelector('span').textContent;
-      btn.setAttribute('aria-label', (EN ? 'Remove filter ' : 'Quitar filtro ') + btn.textContent);
+      btn.setAttribute('aria-label', (EN ? 'Remove filter ' : FR ? 'Retirer le filtre ' : 'Quitar filtro ') + btn.textContent);
       btn.addEventListener('click', function () { b.checked = false; apply(true); });
       li.appendChild(btn); active.appendChild(li);
     });

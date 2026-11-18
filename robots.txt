@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.olispania.es/sitemap.xml
+Sitemap: https://olispania.es/sitemap.xml
